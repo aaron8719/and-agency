@@ -1,1 +1,1092 @@
-# and-agency
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AND Agency – Digitale Reputation auf Premium-Niveau</title>
+<meta name="description" content="AND Agency unterstützt Unternehmen dabei, ihren digitalen Ruf professionell zu schützen und ihre Online-Präsenz nachhaltig zu stärken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0D0D0D;
+    --gold: #C8A86B;
+    --gold-light: #E2C992;
+    --gold-dark: #A8843E;
+    --white: #FFFFFF;
+    --gray-100: #F5F5F3;
+    --gray-200: #E8E8E4;
+    --gray-500: #888880;
+    --gray-700: #444440;
+    --surface: #141414;
+    --surface-2: #1A1A1A;
+    --border: rgba(200,168,107,0.15);
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── LOADER ─── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--black);
+    z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .loader-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    animation: pulse-gold 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-gold {
+    0%,100% { opacity: 0.4; transform: scale(0.97); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* ─── CUSTOM SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1.5rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(13,13,13,0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 5%;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.3rem;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.75);
+    text-decoration: none; transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--gold);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    padding: 0.65rem 1.6rem;
+    border: 1px solid var(--gold);
+    color: var(--gold); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 1px;
+    background: var(--white); transition: all 0.3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none; position: fixed; inset: 0; top: 0;
+    background: rgba(13,13,13,0.97);
+    backdrop-filter: blur(20px);
+    z-index: 999; padding: 8rem 5% 3rem;
+    flex-direction: column; gap: 2.5rem;
+    transform: translateX(100%); transition: transform 0.4s ease;
+  }
+  .mobile-menu.open { transform: translateX(0); display: flex; }
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--white);
+    text-decoration: none; border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem; transition: color 0.3s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 5% 6rem;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,168,107,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 80% 20%, rgba(200,168,107,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse 30% 30% at 20% 80%, rgba(200,168,107,0.04) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(200,168,107,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,168,107,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid var(--border);
+    background: rgba(200,168,107,0.06);
+    backdrop-filter: blur(10px);
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); animation: blink 2s infinite;
+  }
+  @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+  .hero-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 1.8rem;
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: rgba(255,255,255,0.6);
+    max-width: 600px; margin: 0 auto 3rem;
+    font-weight: 300; line-height: 1.8;
+    animation: fadeUp 0.8s ease 0.7s both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.9s both; margin-bottom: 4rem;
+  }
+
+  .btn-primary {
+    padding: 1rem 2.4rem;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .btn-primary::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--white); transform: translateX(-101%);
+    transition: transform 0.3s ease;
+  }
+  .btn-primary:hover::before { transform: translateX(0); }
+  .btn-primary span { position: relative; z-index: 1; }
+  .btn-primary:hover { color: var(--black); }
+
+  .btn-ghost {
+    padding: 1rem 2.4rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-ghost svg { width: 16px; fill: currentColor; }
+
+  /* Trust stats */
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 1.1s both;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
+
+  .stars-row {
+    display: flex; gap: 0.25rem; justify-content: center; margin: 0.4rem 0 0.2rem;
+  }
+  .star { font-size: 0.9rem; color: var(--gold); animation: starPop 0.4s ease both; }
+  @keyframes starPop { from { transform: scale(0); opacity:0; } to { transform: scale(1); opacity:1; } }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 7rem 5%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-desc {
+    color: rgba(255,255,255,0.55); font-size: 1.05rem;
+    line-height: 1.8; max-width: 580px;
+  }
+
+  .divider {
+    width: 60px; height: 1px; background: var(--gold);
+    margin: 2rem 0; opacity: 0.6;
+  }
+
+  /* ─── SERVICES ─── */
+  #leistungen { background: var(--surface); }
+  #leistungen .section-inner { position: relative; }
+
+  .services-header { max-width: 600px; margin-bottom: 5rem; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+
+  .service-card {
+    background: var(--black);
+    padding: 3rem 2.5rem;
+    position: relative; overflow: hidden;
+    transition: all 0.4s ease; cursor: default;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 0; height: 2px; background: var(--gold);
+    transition: width 0.4s ease;
+  }
+  .service-card:hover::before { width: 100%; }
+  .service-card:hover { background: rgba(200,168,107,0.04); }
+
+  .service-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; font-weight: 700;
+    color: rgba(200,168,107,0.12); line-height: 1;
+    margin-bottom: 1.5rem; display: block;
+    transition: color 0.3s;
+  }
+  .service-card:hover .service-num { color: rgba(200,168,107,0.25); }
+
+  .service-icon {
+    width: 44px; height: 44px; margin-bottom: 1.5rem;
+    color: var(--gold); opacity: 0.85;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 600;
+    margin-bottom: 1rem; line-height: 1.3;
+  }
+  .service-desc {
+    font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    line-height: 1.8; margin-bottom: 2rem;
+  }
+  .service-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .service-features li {
+    font-size: 0.8rem; color: rgba(255,255,255,0.55);
+    display: flex; align-items: center; gap: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+  .service-features li::before {
+    content: ''; width: 4px; height: 4px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0;
+  }
+
+  .coming-soon-card {
+    background: rgba(200,168,107,0.03);
+    border: 1px dashed rgba(200,168,107,0.2);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; min-height: 380px;
+  }
+  .coming-soon-badge {
+    display: inline-block; padding: 0.35rem 1rem;
+    border: 1px solid rgba(200,168,107,0.3);
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .coming-soon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; color: rgba(255,255,255,0.35);
+    font-style: italic;
+  }
+
+  /* ─── ÜBER UNS ─── */
+  #ueber-uns .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: center;
+  }
+  .about-image-col { position: relative; }
+  .about-img-wrap {
+    position: relative; aspect-ratio: 4/5; overflow: hidden;
+    background: var(--surface-2);
+  }
+  .about-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(30%) contrast(1.1);
+    transition: transform 0.6s ease;
+  }
+  .about-img-wrap:hover img { transform: scale(1.04); }
+  .about-img-accent {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    width: 120px; height: 120px;
+    border: 1px solid var(--gold);
+    opacity: 0.3; z-index: -1;
+  }
+  .about-img-label {
+    position: absolute; bottom: 2rem; left: -2rem;
+    background: var(--gold); color: var(--black);
+    padding: 1.2rem 1.8rem;
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .about-text-col {}
+  .values-list { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 2.5rem; }
+  .value-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .value-icon {
+    width: 32px; height: 32px; flex-shrink: 0;
+    border: 1px solid rgba(200,168,107,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .value-icon svg { width: 14px; color: var(--gold); }
+  .value-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .value-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+  /* Team */
+  .team-section { margin-top: 6rem; }
+  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 600px; }
+  .team-card {
+    background: var(--surface);
+    padding: 2rem; display: flex; gap: 1.2rem; align-items: flex-start;
+    border: 1px solid transparent; transition: border-color 0.3s;
+  }
+  .team-card:hover { border-color: var(--border); }
+  .team-avatar {
+    width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+    background: var(--surface-2);
+    border: 1px solid rgba(200,168,107,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--gold);
+    overflow: hidden;
+  }
+  .team-avatar img { width:100%; height:100%; object-fit:cover; }
+  .team-name { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .team-role { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; }
+
+  /* ─── KONTAKT ─── */
+  #kontakt { background: var(--surface); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
+
+  .contact-info-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+  }
+  .contact-info-item:first-child { padding-top: 0; }
+  .contact-ico {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .contact-ico svg { width: 15px; color: var(--gold); }
+  .contact-info-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .contact-info-val { font-size: 0.92rem; color: rgba(255,255,255,0.8); }
+  .contact-info-val a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .contact-info-val a:hover { color: var(--gold); }
+
+  .wa-card {
+    background: rgba(37,211,102,0.06);
+    border: 1px solid rgba(37,211,102,0.2);
+    padding: 1.8rem; margin-top: 2.5rem;
+    display: flex; gap: 1rem; align-items: center;
+    text-decoration: none; color: var(--white);
+    transition: all 0.3s;
+  }
+  .wa-card:hover { background: rgba(37,211,102,0.1); }
+  .wa-icon { font-size: 1.8rem; }
+  .wa-text-title { font-weight: 600; font-size: 0.9rem; }
+  .wa-text-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+  /* Form */
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .form-input, .form-textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--white); font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem; padding: 1rem 1.2rem;
+    outline: none; transition: border-color 0.3s;
+    width: 100%;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+  .form-textarea { resize: vertical; min-height: 140px; }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .form-submit {
+    padding: 1.1rem 2rem; background: var(--gold);
+    color: var(--black); font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; border: none; cursor: pointer;
+    transition: all 0.3s; align-self: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 5rem 5% 3rem;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 700; color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .footer-brand-name span { color: var(--gold); }
+  .footer-brand-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 280px; }
+  .footer-socials { display: flex; gap: 0.8rem; margin-top: 1.8rem; }
+  .social-link {
+    width: 36px; height: 36px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: rgba(255,255,255,0.5);
+    transition: all 0.3s; font-size: 0.8rem;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); }
+  .social-link svg { width: 15px; fill: currentColor; }
+
+  .footer-col-title { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 500; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-bottom {
+    padding-top: 2.5rem; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .footer-legal { display: flex; gap: 2rem; }
+  .footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.3s; }
+  .footer-legal a:hover { color: var(--gold); }
+
+  /* ─── IMPRESSUM / DATENSCHUTZ ─── */
+  .legal-section { padding: 10rem 5% 6rem; min-height: 100vh; }
+  .legal-content { max-width: 800px; margin: 0 auto; }
+  .legal-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; margin-bottom: 3rem;
+    padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);
+  }
+  .legal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; color: var(--gold);
+    margin: 2.5rem 0 1rem;
+  }
+  .legal-content p, .legal-content li {
+    font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.9;
+    margin-bottom: 0.8rem;
+  }
+  .legal-content ul { padding-left: 1.5rem; }
+
+  /* ─── FLOATING WHATSAPP ─── */
+  .float-wa {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 998;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeUp 0.8s ease 1.5s both;
+  }
+  .float-wa:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+  .float-wa svg { width: 26px; fill: white; }
+  .float-wa-tooltip {
+    position: absolute; right: 68px;
+    background: var(--surface); color: var(--white);
+    font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.5rem 0.9rem;
+    white-space: nowrap; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s; border: 1px solid var(--border);
+  }
+  .float-wa:hover .float-wa-tooltip { opacity: 1; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(24px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .about-image-col { max-width: 500px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+    .team-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+  }
+
+  /* ─── GLASSMORPHISM CTA BAND ─── */
+  .cta-band {
+    background: linear-gradient(135deg, rgba(200,168,107,0.08) 0%, rgba(200,168,107,0.02) 100%);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    padding: 4rem 5%;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(200,168,107,0.06), transparent 60%);
+  }
+  .cta-band-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700; margin-bottom: 1rem; position: relative;
+  }
+  .cta-band-sub {
+    font-size: 0.95rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2.5rem; position: relative;
+  }
+  .cta-band .btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">AND</div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AND<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#impressum">Impressum</a></li>
+    <li><a href="#datenschutz">Datenschutz</a></li>
+  </ul>
+  <a href="https://wa.me/4366567131232" target="_blank" class="nav-cta">Beratung</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#leistungen" onclick="closeMobile()">Leistungen</a>
+  <a href="#ueber-uns" onclick="closeMobile()">Über uns</a>
+  <a href="#kontakt" onclick="closeMobile()">Kontakt</a>
+  <a href="#impressum" onclick="closeMobile()">Impressum</a>
+  <a href="#datenschutz" onclick="closeMobile()">Datenschutz</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Reputationsmanagement · Digital
+    </div>
+    <h1 class="hero-h1">
+      Digitale Reputation<br>auf <em>Premium-Niveau.</em>
+    </h1>
+    <p class="hero-sub">
+      Wir unterstützen Unternehmen dabei, ihren digitalen Ruf professionell zu schützen und ihre Online-Präsenz nachhaltig zu stärken.
+    </p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-primary"><span>Kostenlose Beratung</span></a>
+      <a href="https://wa.me/4366567131232" target="_blank" class="btn-ghost">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="star-row stars-row" id="starsRow">
+          <span class="star" style="animation-delay:0s">★</span>
+          <span class="star" style="animation-delay:.1s">★</span>
+          <span class="star" style="animation-delay:.2s">★</span>
+          <span class="star" style="animation-delay:.3s">★</span>
+          <span class="star" style="animation-delay:.4s">★</span>
+        </div>
+        <div class="stat-label">Bewertungen verwaltet</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Kundenzufriedenheit</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Jahre Erfahrung</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">120+</div>
+        <div class="stat-label">Betreute Unternehmen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LEISTUNGEN ══════════════ -->
+<section id="leistungen">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <p class="section-eyebrow">Unsere Leistungen</p>
+      <h2 class="section-title">Was wir für Sie<br><em>leisten.</em></h2>
+      <div class="divider"></div>
+      <p class="section-desc">Professionelles Reputationsmanagement, das Ihrem Unternehmen ein starkes, vertrauenswürdiges digitales Fundament gibt.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Service 1 -->
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">01</span>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+        </svg>
+        <h3 class="service-title">Google Bewertungsmanagement</h3>
+        <p class="service-desc">Wir unterstützen Unternehmen dabei, problematische oder geschäftsschädigende Bewertungen professionell prüfen und strategisch angehen zu lassen.</p>
+        <ul class="service-features">
+          <li>Reputationsmanagement</li>
+          <li>Unterstützung bei negativen Bewertungen</li>
+          <li>Professioneller Außenauftritt</li>
+          <li>Verbesserung der digitalen Wahrnehmung</li>
+        </ul>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">02</span>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <h3 class="service-title">Trustpilot Optimierung</h3>
+        <p class="service-desc">Professionelle Optimierung und Betreuung von Trustpilot-Auftritten für Agenturen, Dienstleister und Online-Unternehmen.</p>
+        <ul class="service-features">
+          <li>Vertrauensaufbau</li>
+          <li>Optimierung der Außenwirkung</li>
+          <li>Bewertungsstrategie</li>
+          <li>Markenstärkung</li>
+        </ul>
+      </div>
+
+      <!-- Coming Soon -->
+      <div class="service-card coming-soon-card reveal reveal-delay-3">
+        <div class="coming-soon-badge">In Kürze</div>
+        <div class="coming-soon-title">Weitere Leistungen<br>folgen bald.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA BAND ══════════════ -->
+<div class="cta-band reveal">
+  <h2 class="cta-band-title">Bereit für eine starke<br><em style="font-style:italic;color:var(--gold)">digitale Reputation?</em></h2>
+  <p class="cta-band-sub">Sprechen Sie noch heute mit unserem Team – kostenlos & unverbindlich.</p>
+  <div class="btns">
+    <a href="#kontakt" class="btn-primary"><span>Jetzt Kontakt aufnehmen</span></a>
+    <a href="https://wa.me/4366567131232" target="_blank" class="btn-ghost">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp schreiben
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════ ÜBER UNS ══════════════ -->
+<section id="ueber-uns">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-col reveal">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fit=crop" alt="AND Agency Office" loading="lazy">
+        </div>
+        <div class="about-img-accent"></div>
+        <div class="about-img-label">AND Agency · Wien</div>
+      </div>
+      <div class="about-text-col">
+        <p class="section-eyebrow reveal">Über uns</p>
+        <h2 class="section-title reveal">Moderne Expertise.<br><em>Messbarer Erfolg.</em></h2>
+        <div class="divider reveal"></div>
+        <p class="section-desc reveal">AND Agency steht für modernes Reputationsmanagement mit Fokus auf professionelle Außenwirkung und digitale Vertrauensbildung. Wir begleiten unsere Kunden mit Präzision, Diskretion und tiefem Fachwissen.</p>
+        <div class="values-list">
+          <div class="value-item reveal reveal-delay-1">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="value-title">Vertrauen & Diskretion</div>
+              <div class="value-desc">Wir behandeln jedes Mandat mit höchster Vertraulichkeit und professioneller Sorgfalt.</div>
+            </div>
+          </div>
+          <div class="value-item reveal reveal-delay-2">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <div class="value-title">Schnelle Reaktionszeit</div>
+              <div class="value-desc">In sensiblen Reputationsfragen zählt jede Stunde. Wir handeln schnell und präzise.</div>
+            </div>
+          </div>
+          <div class="value-item reveal reveal-delay-3">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="value-title">Nachhaltige Ergebnisse</div>
+              <div class="value-desc">Unsere Strategien sind auf langfristigen Erfolg ausgerichtet – nicht auf kurzfristige Lösungen.</div>
+            </div>
+          </div>
+        </div>
+        <div class="team-section reveal">
+          <p class="section-eyebrow" style="margin-bottom:1.5rem">Ihr Ansprechpartner</p>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar">AR</div>
+              <div>
+                <div class="team-name">Aaron Roesler</div>
+                <div class="team-role">Managing Director</div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar">DH</div>
+              <div>
+                <div class="team-name">Deniel Hoffmann</div>
+                <div class="team-role">Head of Strategy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ KONTAKT ══════════════ -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <p class="section-eyebrow reveal">Kontakt</p>
+        <h2 class="section-title reveal">Sprechen wir über<br><em>Ihr Projekt.</em></h2>
+        <div class="divider reveal"></div>
+        <p class="section-desc reveal" style="margin-bottom:2.5rem">Unser Team steht Ihnen für eine kostenlose Erstberatung zur Verfügung. Nehmen Sie noch heute Kontakt auf.</p>
+
+        <div class="reveal">
+          <div class="contact-info-item">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Telefon / WhatsApp</div>
+              <div class="contact-info-val"><a href="tel:+4366567131232">+43 6656 7131232</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">E-Mail</div>
+              <div class="contact-info-val"><a href="mailto:info@and-agency.at">info@and-agency.at</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Website</div>
+              <div class="contact-info-val"><a href="https://and-agency.at" target="_blank">and-agency.at</a></div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/4366567131232" target="_blank" class="wa-card reveal">
+          <div class="wa-icon">
+            <svg width="32" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <div class="wa-text-title">Direkt auf WhatsApp schreiben</div>
+            <div class="wa-text-sub">Schnelle Antwort, kostenlos & unverbindlich</div>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" class="wa-card reveal" style="background:rgba(131,58,180,0.06);border-color:rgba(131,58,180,0.25);margin-top:1rem">
+          <div class="wa-icon">
+            <svg width="28" viewBox="0 0 24 24" fill="url(#ig)"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div>
+            <div class="wa-text-title">Folge uns auf Instagram</div>
+            <div class="wa-text-sub">@andagency · Updates & Insights</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Vorname</label>
+              <input class="form-input" type="text" placeholder="Max" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nachname</label>
+              <input class="form-input" type="text" placeholder="Mustermann" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-Mail</label>
+            <input class="form-input" type="email" placeholder="max@muster.at" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefon (optional)</label>
+            <input class="form-input" type="tel" placeholder="+43 ...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Anliegen</label>
+            <textarea class="form-textarea" placeholder="Beschreiben Sie kurz Ihr Anliegen …" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Nachricht senden →</button>
+          <p id="form-success" style="color:var(--gold);font-size:.82rem;display:none;margin-top:.5rem">✓ Danke! Wir melden uns in Kürze.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ IMPRESSUM ══════════════ -->
+<section id="impressum" class="legal-section" style="padding-top:8rem">
+  <div class="legal-content">
+    <p class="section-eyebrow">Rechtliches</p>
+    <h1>Impressum</h1>
+    <h2>Angaben gemäß § 5 ECG</h2>
+    <p><strong>AND Agency</strong><br>Aaron Roesler & Deniel Hoffmann<br>Österreich</p>
+    <p>Telefon: <a href="tel:+4366567131232" style="color:var(--gold)">+43 6656 7131232</a><br>
+    E-Mail: <a href="mailto:info@and-agency.at" style="color:var(--gold)">info@and-agency.at</a><br>
+    Web: <a href="https://and-agency.at" style="color:var(--gold)">https://and-agency.at</a></p>
+    <h2>Haftungsausschluss</h2>
+    <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. AND Agency übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.</p>
+    <h2>Urheberrecht</h2>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+  </div>
+</section>
+
+<!-- ══════════════ DATENSCHUTZ ══════════════ -->
+<section id="datenschutz" class="legal-section" style="background:var(--surface)">
+  <div class="legal-content">
+    <p class="section-eyebrow">Rechtliches</p>
+    <h1>Datenschutzerklärung</h1>
+    <h2>Verantwortlicher</h2>
+    <p>AND Agency, Aaron Roesler & Deniel Hoffmann, Österreich<br>E-Mail: info@and-agency.at</p>
+    <h2>Erhobene Daten</h2>
+    <p>Beim Besuch unserer Website werden automatisch Informationen allgemeiner Natur erfasst. Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, das verwendete Betriebssystem, den Domainnamen Ihres Internet Service Providers und Ähnliches.</p>
+    <h2>Kontaktformular</h2>
+    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+    <h2>Ihre Rechte</h2>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+    </ul>
+    <h2>Cookies</h2>
+    <p>Unsere Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können zur Bereitstellung der Website eingesetzt werden.</p>
+    <h2>Kontakt Datenschutz</h2>
+    <p>Bei Fragen zum Datenschutz wenden Sie sich an: <a href="mailto:info@and-agency.at" style="color:var(--gold)">info@and-agency.at</a></p>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">AND<span>.</span></div>
+        <p class="footer-brand-desc">Digitale Reputation auf Premium-Niveau. Wir schützen und stärken Ihren Online-Auftritt nachhaltig.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com" class="social-link" target="_blank" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/4366567131232" class="social-link" target="_blank" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Rechtliches</div>
+        <ul class="footer-links">
+          <li><a href="#impressum">Impressum</a></li>
+          <li><a href="#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="tel:+4366567131232">+43 6656 7131232</a></li>
+          <li><a href="mailto:info@and-agency.at">info@and-agency.at</a></li>
+          <li><a href="https://and-agency.at" target="_blank">and-agency.at</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 AND Agency. Alle Rechte vorbehalten.</div>
+      <div class="footer-legal">
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/4366567131232" target="_blank" class="float-wa" title="WhatsApp">
+  <div class="float-wa-tooltip">Jetzt schreiben</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Loader
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 800);
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Wird gesendet …';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Nachricht senden →';
+      btn.disabled = false;
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => document.getElementById('form-success').style.display = 'none', 5000);
+    }, 1400);
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
