@@ -7,6 +7,19 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Request Body sicher auslesen
+    let body = req.body;
+
+    if (typeof body === "string") {
+      try {
+        body = JSON.parse(body);
+      } catch {
+        body = {};
+      }
+    }
+
+    body = body || {};
+
     const {
       firstName,
       lastName,
@@ -17,7 +30,7 @@ export default async function handler(req, res) {
       service,
       message,
       website
-    } = req.body;
+    } = body;
 
     // Spam-Schutz
     if (website) {
