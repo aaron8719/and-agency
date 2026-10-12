@@ -6,7 +6,7 @@
 <title>Strom- und Gasberatung für Unternehmen | AND Agency</title>
 <meta name="description" content="AND Agency unterstützt Unternehmen bei der strategischen Strom- und Gasbeschaffung und prüft wirtschaftliche Optimierungsmöglichkeiten. Jetzt unverbindlich Beratung anfragen.">
 <link rel="canonical" href="https://www.and-agency.de/strom-gas.html">
-<meta name="theme-color" content="#12372a">
+<meta name="theme-color" content="#0e0e0e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ihre Energiekosten. Ihre Strategie. | AND Agency">
 <meta property="og:description" content="Strategische Strom- und Gasbeschaffung und Energieberatung für Unternehmen.">
@@ -14,8 +14,8 @@
 <style>
 /* ===== Design-Tokens ===== */
 :root{
-  --cream:#f7f4ec; --cream-2:#efeadd; --forest:#12372a; --forest-2:#1b4a39;
-  --ink:#1e2321; --lime:#c5e66b; --sage:#a9c4a0; --line:rgba(30,35,33,.14);
+  --cream:#f7f4ec; --cream-2:#efe9da; --black:#0e0e0e; --black-2:#1a1917;
+  --ink:#1c1c1c; --gold:#c9a24a; --gold-light:#e3c778; --champagne:#d9c9a3; --line:rgba(28,28,28,.14);
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --r:20px; --wrap:1180px;
@@ -30,46 +30,46 @@ h2{font-size:clamp(2rem,4.6vw,3.3rem)}
 h3{font-size:1.4rem}
 p{margin:0}
 .wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
-:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4px}
-.on-light :focus-visible,.hdr :focus-visible,.form-card :focus-visible{outline-color:var(--forest)}
+:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px;border-radius:4px}
+.on-light :focus-visible,.hdr :focus-visible,.form-card :focus-visible{outline-color:var(--black)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:1rem;top:-4rem;background:var(--lime);color:var(--ink);padding:.6rem 1rem;border-radius:8px;z-index:100}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--gold);color:var(--black);padding:.6rem 1rem;border-radius:8px;z-index:100}
 .skip:focus{top:1rem}
 
 /* ===== Buttons ===== */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;padding:.85rem 1.6rem;border-radius:999px;border:1.5px solid transparent;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-lime{background:var(--lime);color:var(--ink)}
-.btn-lime:hover{background:#d4f07f}
-.btn-forest{background:var(--forest);color:var(--cream)}
-.btn-forest:hover{background:var(--forest-2)}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-dark{background:var(--black);color:var(--cream)}
+.btn-dark:hover{background:var(--gold);color:var(--black)}
 .btn-ghost{border-color:rgba(247,244,236,.55);color:var(--cream)}
-.btn-ghost:hover{background:rgba(247,244,236,.12);border-color:var(--cream)}
+.btn-ghost:hover{background:rgba(201,162,74,.18);border-color:var(--gold-light)}
 
 /* ===== Header ===== */
 .hdr{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:1rem}
 .logo{display:flex;align-items:center;text-decoration:none;min-width:0}
 .logo img{height:40px;width:auto}
-.logo-text{font:600 1.35rem var(--serif);color:var(--forest);letter-spacing:-.01em}
+.logo-text{font:600 1.35rem var(--serif);color:var(--black);letter-spacing:-.01em}
 .nav{display:none;gap:2rem}
-.nav a{text-decoration:none;font-size:.97rem;font-weight:500;padding:.3rem 0;background:linear-gradient(var(--forest),var(--forest)) 0 100%/0 2px no-repeat;transition:background-size .25s}
+.nav a{text-decoration:none;font-size:.97rem;font-weight:500;padding:.3rem 0;background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 2px no-repeat;transition:background-size .25s}
 .nav a:hover{background-size:100% 2px}
 .hdr .btn{min-height:42px;padding:.5rem 1.2rem;font-size:.95rem}
 @media(min-width:900px){.nav{display:flex}}
 
 /* ===== Hero ===== */
-.hero{position:relative;background:var(--forest);color:var(--cream);border-radius:0 0 36px 36px;overflow:hidden;padding:3rem 0 4rem}
-.hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero{position:relative;background:radial-gradient(900px 500px at 85% 10%,rgba(201,162,74,.16),transparent 60%),var(--black);color:var(--cream);border-radius:0 0 36px 36px;overflow:hidden;padding:3rem 0 4rem}
+.hero-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.6;pointer-events:none}
 .hero .wrap{position:relative;display:grid;gap:2.2rem;grid-template-areas:"copy" "form" "photo"}
 .hero-copy{grid-area:copy}
 .hero h1{font-size:clamp(2.6rem,8vw,5rem);margin-bottom:1.3rem}
 .hero .sub{font-size:1.15rem;max-width:34rem;color:rgba(247,244,236,.86);margin-bottom:2rem}
 .cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
-.photo{grid-area:photo;position:relative;width:min(100%,300px);aspect-ratio:4/5;border-radius:150px 150px 24px 24px;overflow:hidden;border:1px solid rgba(197,230,107,.5);background:linear-gradient(160deg,var(--forest-2),#0c271d)}
+.photo{grid-area:photo;position:relative;width:min(100%,300px);aspect-ratio:4/5;border-radius:150px 150px 24px 24px;overflow:hidden;border:1px solid rgba(201,162,74,.7);background:linear-gradient(160deg,var(--black-2),#050505)}
 .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.photo-fallback{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:1.2rem;font-size:.85rem;color:var(--sage)}
-.photo-cap{position:absolute;left:0;right:0;bottom:0;padding:2.5rem 1rem .9rem;background:linear-gradient(transparent,rgba(12,39,29,.88));font-size:.88rem}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:1.2rem;font-size:.85rem;color:var(--champagne)}
+.photo-cap{position:absolute;left:0;right:0;bottom:0;padding:2.5rem 1rem .9rem;background:linear-gradient(transparent,rgba(8,8,8,.9));font-size:.88rem}
 .photo-cap strong{display:block;font:500 1.05rem var(--serif)}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
@@ -79,89 +79,90 @@ p{margin:0}
 .hero-lines path{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 3.2s ease-out .2s forwards}
 
 /* ===== Formular ===== */
-.form-card{grid-area:form;background:var(--cream);color:var(--ink);border-radius:var(--r);padding:1.6rem 1.4rem;box-shadow:0 30px 60px -25px rgba(0,0,0,.55)}
+.form-card{grid-area:form;background:var(--cream);color:var(--ink);border-radius:var(--r);padding:1.6rem 1.4rem;border-top:4px solid var(--gold);box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
 .form-card h2{font-size:1.7rem;margin-bottom:.3rem}
-.form-card .lead{font-size:.95rem;color:#4a524f;margin-bottom:1.2rem}
+.form-card .lead{font-size:.95rem;color:#4d4a43;margin-bottom:1.2rem}
 .grid2{display:grid;gap:.9rem}
 .field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
 .grid2 .field{margin-bottom:0}.grid2{margin-bottom:.9rem}
 .field label{font-size:.88rem;font-weight:600}
-.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.75rem .9rem;border:1.5px solid #b9bfb9;border-radius:12px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:1rem;padding:.75rem .9rem;border:1.5px solid #b9b5aa;border-radius:12px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
 .field textarea{min-height:92px;resize:vertical}
-.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--forest)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(18,55,42,.25)}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--black)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--black);box-shadow:0 0 0 3px rgba(201,162,74,.55)}
 .field [aria-invalid="true"]{border-color:#b3261e;background:#fff8f7}
 .err{color:#a8231b;font-size:.84rem;min-height:0}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 .consent{display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;margin:.2rem 0 1rem}
-.consent input{width:20px;height:20px;margin-top:.15rem;accent-color:var(--forest);flex:none}
-.consent a{color:var(--forest);font-weight:600}
+.consent input{width:20px;height:20px;margin-top:.15rem;accent-color:var(--black);flex:none}
+.consent a{color:var(--black);font-weight:600}
 .form-card .btn{width:100%}
 .btn[disabled]{opacity:.7;cursor:progress;transform:none}
 .spin{width:18px;height:18px;border:2.5px solid rgba(247,244,236,.4);border-top-color:var(--cream);border-radius:50%;animation:rot .8s linear infinite}
 @keyframes rot{to{transform:rotate(360deg)}}
 .status{margin-top:.9rem;font-size:.95rem;border-radius:12px;padding:0}
 .status.ok,.status.bad{padding:.9rem 1rem}
-.status.ok{background:#e4f1d4;color:#1f4a14;border:1px solid #9fc67a}
+.status.ok{background:#f4ecd3;color:#4a3a0c;border:1px solid #d9c27a}
 .status.bad{background:#fdeceb;color:#8e1d17;border:1px solid #e7a9a5}
-.fine{font-size:.78rem;color:#5a625f;margin-top:.8rem}
+.fine{font-size:.78rem;color:#5c5850;margin-top:.8rem}
 
 /* ===== Nutzenleiste ===== */
 .bar{padding:3.5rem 0 1rem}
 .bar ul{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem}
 .bar li{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
-.bar svg{flex:none;width:40px;height:40px;color:var(--forest)}
+.bar svg{flex:none;width:40px;height:40px;color:var(--black)}
+.bar svg *{stroke:var(--black)}
 .bar b{display:block;font:500 1.2rem var(--serif);margin-bottom:.2rem}
-.bar span{font-size:.95rem;color:#4a524f}
+.bar span{font-size:.95rem;color:#4d4a43}
 
 /* ===== Sektionen ===== */
 section{padding:5rem 0}
 .head{max-width:40rem;margin-bottom:3rem}
-.head p{margin-top:1rem;color:#4a524f;font-size:1.1rem}
+.head p{margin-top:1rem;color:#4d4a43;font-size:1.1rem}
 
 /* Leistungen */
 .svc{display:grid;gap:0;border-top:1px solid var(--line)}
 .svc article{display:grid;gap:.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);transition:padding-left .3s,background .3s}
-.svc article:hover{padding-left:1rem;background:linear-gradient(90deg,rgba(197,230,107,.28),transparent)}
-.svc p{color:#4a524f;max-width:38rem}
-.tag{display:inline-block;width:max-content;font-size:.8rem;font-weight:600;background:var(--cream-2);color:var(--forest);padding:.2rem .7rem;border-radius:999px}
+.svc article:hover{padding-left:1rem;background:linear-gradient(90deg,rgba(201,162,74,.25),transparent)}
+.svc p{color:#4d4a43;max-width:38rem}
+.tag{display:inline-block;width:max-content;font-size:.8rem;font-weight:600;background:var(--black);color:var(--gold-light);padding:.2rem .7rem;border-radius:999px}
 @media(min-width:800px){.svc article{grid-template-columns:1fr 1.4fr auto;align-items:center;gap:2rem}}
 
 /* Modelle */
-.models{background:var(--ink);color:var(--cream);border-radius:36px;margin:0 .75rem}
+.models{background:var(--black-2);color:var(--cream);border-radius:36px;margin:0 .75rem}
 .models .head p{color:rgba(247,244,236,.75)}
 .mgrid{display:grid;gap:1rem}
-.model{background:rgba(247,244,236,.06);border:1px solid rgba(247,244,236,.14);border-radius:var(--r);padding:1.5rem;transition:transform .25s,border-color .25s,background .25s}
-.model:hover{transform:translateY(-4px);border-color:var(--lime);background:rgba(247,244,236,.1)}
-.model svg{width:100%;height:64px;margin-bottom:1rem;color:var(--lime)}
+.model{background:rgba(247,244,236,.05);border:1px solid rgba(247,244,236,.14);border-radius:var(--r);padding:1.5rem;transition:transform .25s,border-color .25s,background .25s}
+.model:hover{transform:translateY(-4px);border-color:var(--gold);background:rgba(201,162,74,.08)}
+.model svg{width:100%;height:64px;margin-bottom:1rem;color:var(--gold)}
 .model h3{margin-bottom:.5rem}
 .model p{font-size:.95rem;color:rgba(247,244,236,.8)}
-.model .for{margin-top:.9rem;font-size:.85rem;color:var(--sage)}
+.model .for{margin-top:.9rem;font-size:.85rem;color:var(--champagne)}
 @media(min-width:700px){.mgrid{grid-template-columns:1fr 1fr}}
 @media(min-width:1050px){.mgrid{grid-template-columns:repeat(4,1fr)}}
 .note{margin-top:1.6rem;font-size:.88rem;color:rgba(247,244,236,.65);max-width:44rem}
 
 /* Prozess */
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:2rem;counter-reset:s}
-.steps li{position:relative;padding-top:1.2rem;border-top:2px solid var(--forest);counter-increment:s}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--lime);font:500 1.1rem var(--serif);margin-bottom:.9rem}
+.steps li{position:relative;padding-top:1.2rem;border-top:2px solid var(--gold);counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--black);color:var(--gold-light);font:500 1.1rem var(--serif);margin-bottom:.9rem}
 .steps h3{margin-bottom:.4rem}
-.steps p{font-size:.97rem;color:#4a524f}
+.steps p{font-size:.97rem;color:#4d4a43}
 @media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr);gap:1.5rem}}
 
 /* Potenziale */
 .pot{display:grid;gap:2.5rem;align-items:center}
-.pot-box{background:var(--forest);color:var(--cream);border-radius:var(--r);padding:2rem}
+.pot-box{background:var(--black);color:var(--cream);border-radius:var(--r);padding:2rem;border:1px solid rgba(201,162,74,.5)}
 .pot-box ul{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
 .pot-box li{display:flex;gap:.8rem;align-items:flex-start}
-.pot-box li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55rem;border-radius:50%;background:var(--lime)}
-.pot-box small{display:block;margin-top:1.4rem;color:var(--sage);font-size:.85rem}
-.pot p.t{color:#4a524f;margin-top:1rem}
+.pot-box li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55rem;border-radius:50%;background:var(--gold)}
+.pot-box small{display:block;margin-top:1.4rem;color:var(--champagne);font-size:.85rem}
+.pot p.t{color:#4d4a43;margin-top:1rem}
 @media(min-width:900px){.pot{grid-template-columns:1fr 1fr;gap:4rem}}
 
 /* Abschluss */
 .final{padding:0 0 5rem}
-.final .box{position:relative;overflow:hidden;background:var(--forest);color:var(--cream);border-radius:36px;padding:3.5rem 1.6rem;text-align:center}
+.final .box{position:relative;overflow:hidden;background:radial-gradient(700px 360px at 50% 0%,rgba(201,162,74,.2),transparent 70%),var(--black);color:var(--cream);border-radius:36px;padding:3.5rem 1.6rem;text-align:center;border:1px solid rgba(201,162,74,.5)}
 .final h2{max-width:34rem;margin:0 auto 1rem}
 .final p{max-width:32rem;margin:0 auto 2rem;color:rgba(247,244,236,.82)}
 .final .cta-row{justify-content:center}
@@ -172,7 +173,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.95rem}
 footer h3{font:600 1rem var(--sans);margin-bottom:.6rem}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
 footer a{text-underline-offset:3px}
-.copy{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5a625f;font-size:.85rem}
+.copy{margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--line);color:#5c5850;font-size:.85rem}
 @media(min-width:800px){.fgrid{grid-template-columns:1.4fr 1fr 1fr}}
 
 /* Desktop-Hero */
@@ -209,7 +210,7 @@ footer a{text-underline-offset:3px}
       <a href="#ablauf">Zusammenarbeit</a>
       <a href="#potenziale">Potenziale</a>
     </nav>
-    <a class="btn btn-forest" href="#kontakt">Kontakt</a>
+    <a class="btn btn-dark" href="#kontakt">Kontakt</a>
   </div>
 </header>
 
@@ -217,10 +218,10 @@ footer a{text-underline-offset:3px}
 <!-- ===== HERO ===== -->
 <div class="hero on-dark">
   <svg class="hero-lines" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-    <g fill="none" stroke="#c5e66b" stroke-width="1.2">
+    <g fill="none" stroke="#c9a24a" stroke-width="1.2">
       <path d="M-20 560 C 220 520, 360 260, 620 300 S 980 540, 1240 120"/>
-      <path d="M-20 600 C 240 560, 380 330, 640 350 S 1000 580, 1240 190" stroke="#a9c4a0" opacity=".7"/>
-      <path d="M-20 640 C 260 600, 400 400, 660 400 S 1020 620, 1240 260" stroke="#a9c4a0" opacity=".45"/>
+      <path d="M-20 600 C 240 560, 380 330, 640 350 S 1000 580, 1240 190" stroke="#d9c9a3" opacity=".6"/>
+      <path d="M-20 640 C 260 600, 400 400, 660 400 S 1020 620, 1240 260" stroke="#d9c9a3" opacity=".35"/>
     </g>
   </svg>
   <div class="wrap">
@@ -228,7 +229,7 @@ footer a{text-underline-offset:3px}
       <h1>Ihre Energiekosten. Ihre Strategie.</h1>
       <p class="sub">AND Agency begleitet Unternehmen bei der strategischen Strom- und Gasbeschaffung und prüft, wo sich wirtschaftliche Optimierungsmöglichkeiten ergeben.</p>
       <div class="cta-row">
-        <a class="btn btn-lime" href="#kontakt">Beratung anfragen</a>
+        <a class="btn btn-gold" href="#kontakt">Beratung anfragen</a>
         <a class="btn btn-ghost" href="#leistungen">Leistungen entdecken</a>
       </div>
     </div>
@@ -299,7 +300,7 @@ footer a{text-underline-offset:3px}
           <label for="privacy">Ich habe die <a href="https://www.and-agency.de/#datenschutz">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</label>
         </div>
         <span class="err" id="e-privacy" aria-live="polite"></span>
-        <button class="btn btn-forest" type="submit" id="submit-btn"><span id="btn-label">Beratung anfragen</span></button>
+        <button class="btn btn-dark" type="submit" id="submit-btn"><span id="btn-label">Beratung anfragen</span></button>
         <div class="status" id="status" role="status" aria-live="polite" tabindex="-1"></div>
       </form>
       <p class="fine">Unverbindlich. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
@@ -322,19 +323,19 @@ footer a{text-underline-offset:3px}
   <div class="wrap">
     <ul>
       <li>
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 30 L15 20 L22 25 L34 9"/><path d="M26 9h8v8"/></svg>
+        <svg viewBox="0 0 40 40" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 30 L15 20 L22 25 L34 9"/><path d="M26 9h8v8"/></svg>
         <div><b>Strategische Beschaffung</b><span>Einkauf nach Ihrem Verbrauchsprofil und Ihrer Risikoneigung.</span></div>
       </li>
       <li>
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="13"/><path d="M20 11v9l6 4"/></svg>
+        <svg viewBox="0 0 40 40" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="13"/><path d="M20 11v9l6 4"/></svg>
         <div><b>Zeit gespart</b><span>Wir übernehmen Marktbeobachtung und Angebotsvergleich.</span></div>
       </li>
       <li>
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h24v24H8z"/><path d="M14 20l5 5 8-9"/></svg>
+        <svg viewBox="0 0 40 40" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h24v24H8z"/><path d="M14 20l5 5 8-9"/></svg>
         <div><b>Mögliche Entlastungen geprüft</b><span>Etwa bei der Stromsteuer, abhängig von Ihrer Situation.</span></div>
       </li>
       <li>
-        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 10h26v16H17l-7 6v-6H7z"/></svg>
+        <svg viewBox="0 0 40 40" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 10h26v16H17l-7 6v-6H7z"/></svg>
         <div><b>Ein Ansprechpartner</b><span>Persönliche Beratung statt Vergleichsportal.</span></div>
       </li>
     </ul>
@@ -437,7 +438,7 @@ footer a{text-underline-offset:3px}
       <h2>Lassen Sie uns über Ihre Energiestrategie sprechen.</h2>
       <p>Unverbindlich und persönlich. Schreiben Sie uns oder nutzen Sie das Formular.</p>
       <div class="cta-row">
-        <a class="btn btn-lime" href="#kontakt">Beratung anfragen</a>
+        <a class="btn btn-gold" href="#kontakt">Beratung anfragen</a>
         <a class="btn btn-ghost" href="https://wa.me/491601238601" target="_blank" rel="noopener">Per WhatsApp schreiben</a>
       </div>
     </div>
@@ -451,7 +452,7 @@ footer a{text-underline-offset:3px}
     <div class="fgrid">
       <div>
         <p class="logo-text">AND Agency</p>
-        <p style="margin-top:.5rem;color:#4a524f;max-width:20rem">Energieberatung und Beschaffung für Unternehmen.</p>
+        <p style="margin-top:.5rem;color:#4d4a43;max-width:20rem">Energieberatung und Beschaffung für Unternehmen.</p>
       </div>
       <div>
         <h3>Kontakt</h3>
