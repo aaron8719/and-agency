@@ -1,1 +1,1335 @@
+DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Strom- & Gasoptimierung für Unternehmen | AND Agency</title>
+  <meta name="description" content="AND Agency unterstützt Unternehmen bei Strom- und Gasbeschaffung, Beschaffungsstrategien, Energieeffizienz, Stromsteuerentlastung, Energieaudits und Photovoltaik-Contracting.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.and-agency.de/strom-gas.html">
+
+  <meta property="og:title" content="Strom- & Gasoptimierung für Unternehmen | AND Agency">
+  <meta property="og:description" content="Energie strategisch beschaffen, Kostenpotenziale prüfen und passende Lösungen für Ihr Unternehmen finden.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.and-agency.de/strom-gas.html">
+
+  <meta name="theme-color" content="#090909">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --surface: #121212;
+      --surface-light: #191919;
+      --gold: #d6b36a;
+      --gold-light: #f0d99e;
+      --text: #f5f5f5;
+      --muted: #b6b6b6;
+      --border: rgba(214, 179, 106, 0.23);
+      --radius: 18px;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      margin: 18px 0;
+      max-width: 850px;
+    }
+
+    h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      margin: 12px 0 18px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading p {
+      font-size: 17px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 9, 9, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      display: block;
+      width: auto;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .nav a:not(.button) {
+      color: #d0d0d0;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:not(.button):hover {
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      min-height: 48px;
+      border-radius: 8px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 700;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .button-outline:hover {
+      color: #111;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 88px;
+      background:
+        radial-gradient(ellipse at 85% 10%, rgba(214, 179, 106, 0.12), transparent 38%),
+        linear-gradient(135deg, #0b0b0b, #101010 55%, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -170px;
+      bottom: -250px;
+      border: 1px solid rgba(214, 179, 106, 0.16);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 40px rgba(214, 179, 106, 0.025),
+        0 0 0 80px rgba(214, 179, 106, 0.02);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+    }
+
+    .hero-description {
+      font-size: 19px;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 26px;
+      font-size: 13px;
+      color: #a7a7a7;
+    }
+
+    .trust-strip {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d0d0d;
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      padding: 24px 0;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e2e2e2;
+      font-size: 14px;
+    }
+
+    .check {
+      display: inline-flex;
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--gold);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 28px;
+      background: linear-gradient(145deg, var(--surface-light), var(--surface));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 23px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+    }
+
+    .muted-section {
+      background: #0e0e0e;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+      gap: 55px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .feature .check {
+      margin-top: 2px;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .feature p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .model-card {
+      border-top: 2px solid var(--gold);
+    }
+
+    .model-tag {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .notice {
+      padding: 20px 22px;
+      background: rgba(214, 179, 106, 0.07);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: #dedede;
+      font-size: 14px;
+      margin-top: 26px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .step {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      counter-increment: step;
+    }
+
+    .step-number {
+      display: block;
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+    }
+
+    .cta-band {
+      padding: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(214, 179, 106, 0.12), transparent 55%),
+        #121212;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(25px, 3vw, 35px);
+      margin-top: 8px;
+    }
+
+    .cta-band p {
+      margin-bottom: 0;
+    }
+
+    .contact-section {
+      background: #0e0e0e;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .contact-detail {
+      padding: 17px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-detail a:hover {
+      color: var(--gold);
+    }
+
+    .contact-form {
+      padding: 30px;
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #e8e8e8;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      color: var(--text);
+      background: #0b0b0b;
+      border: 1px solid #393939;
+      border-radius: 8px;
+      padding: 12px 13px;
+      outline: none;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(214, 179, 106, 0.12);
+    }
+
+    .form-field select option {
+      background: #111;
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .privacy-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 20px 0;
+    }
+
+    .privacy-consent input {
+      margin-top: 5px;
+      accent-color: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .privacy-consent a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    .form-message {
+      display: none;
+      padding: 14px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .form-message.success {
+      display: block;
+      color: #d9f8df;
+      background: #102417;
+      border: 1px solid #285b37;
+    }
+
+    .form-message.error {
+      display: block;
+      color: #ffd9d9;
+      background: #2b1111;
+      border: 1px solid #713333;
+    }
+
+    .form-submit {
+      width: 100%;
+    }
+
+    .form-submit:disabled {
+      opacity: 0.6;
+      cursor: wait;
+      transform: none;
+    }
+
+    .form-note {
+      font-size: 12px;
+      margin: 14px 0 0;
+    }
+
+    .honeypot {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .site-footer {
+      padding: 35px 0 25px;
+      border-top: 1px solid var(--border);
+      background: #080808;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding-bottom: 25px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-brand img {
+      width: auto;
+      height: 43px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .legal-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: #c4c4c4;
+    }
+
+    .legal-links a:hover {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      color: #858585;
+    }
+
+    .footer-bottom p {
+      font-size: inherit;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        gap: 14px;
+      }
+
+      .nav a:not(.button) {
+        display: none;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .split,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-band {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, var(--max-width));
+      }
+
+      .header-inner {
+        min-height: 72px;
+        gap: 12px;
+      }
+
+      .brand img {
+        height: 45px;
+      }
+
+      .nav .button {
+        padding: 10px 13px;
+        min-height: 42px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .trust-inner,
+      .grid-3,
+      .grid-2,
+      .steps,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-inner {
+        gap: 15px;
+      }
+
+      .card,
+      .contact-form {
+        padding: 23px;
+      }
+
+      .cta-band {
+        padding: 28px 22px;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-brand {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .legal-links {
+        gap: 10px;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://www.and-agency.de/" aria-label="AND Agency Startseite">
+        <img
+          src="/795B305C-2494-44F8-8B59-2EC5C0659FEC.png"
+          alt="AND Agency"
+        >
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#beschaffung">Beschaffung</a>
+        <a href="#ablauf">Ablauf</a>
+        <a class="button" href="#kontakt">Beratung anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="eyebrow">Energieberatung für Unternehmen</span>
+
+        <h1>
+          Energie strategisch beschaffen.
+          <span class="gold">Potenziale erkennen.</span>
+        </h1>
+
+        <p class="hero-description">
+          AND Agency unterstützt Unternehmen dabei, passende Strom- und
+          Gasbeschaffungsstrategien zu finden, Energiekosten transparent
+          zu bewerten und weitere Einspar- und Optimierungspotenziale zu prüfen.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#kontakt">Unverbindlich Kontakt aufnehmen</a>
+          <a class="button button-outline" href="#leistungen">Leistungen entdecken</a>
+        </div>
+
+        <p class="hero-note">
+          Individuelle Betrachtung statt pauschaler Versprechen –
+          abgestimmt auf Ihren Verbrauch und Ihre Unternehmensziele.
+        </p>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>Individuelle Beschaffungsstrategien</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>Transparente Prüfung von Potenzialen</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">✓</span>
+          <span>Beratung zu weiteren Energiethemen</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Unsere Leistungen</span>
+          <h2>Ganzheitlich auf Ihre Energieversorgung schauen</h2>
+          <p>
+            Ob mittelständischer Betrieb oder anderes Unternehmen:
+            Wir betrachten Ihre Ausgangssituation und zeigen auf,
+            welche Maßnahmen sinnvoll geprüft werden können.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">↗</div>
+            <h3>Strombeschaffung</h3>
+            <p>
+              Prüfung geeigneter Beschaffungsmodelle, Vertragsbedingungen
+              und Laufzeiten – abgestimmt auf Ihr Verbrauchsprofil.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⌁</div>
+            <h3>Gasbeschaffung</h3>
+            <p>
+              Bewertung von Gasangeboten und Beschaffungsoptionen unter
+              Berücksichtigung Ihres Bedarfs und Ihrer Planungssicherheit.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3>Beschaffungsstrategie</h3>
+            <p>
+              Vergleich von Festpreis-, Terminmarkt- und geeigneten
+              strukturierten Beschaffungsmodellen.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">€</div>
+            <h3>Steuerentlastungen</h3>
+            <p>
+              Prüfung, ob Stromsteuerentlastungen oder andere einschlägige
+              Entlastungsmöglichkeiten für Ihr Unternehmen infrage kommen.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙</div>
+            <h3>Energieeffizienz</h3>
+            <p>
+              Identifikation möglicher Ansatzpunkte, um Energieverbräuche
+              zu analysieren und geeignete Effizienzmaßnahmen zu bewerten.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☀</div>
+            <h3>Photovoltaik-Contracting</h3>
+            <p>
+              Prüfung von Möglichkeiten, Solarstrom auf betrieblichen
+              Dach- oder Freiflächen über Contracting-Modelle zu nutzen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted-section" id="beschaffung">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Beschaffung mit System</span>
+          <h2>Welches Modell passt zu Ihrem Unternehmen?</h2>
+          <p>
+            Der günstigste Tarif auf dem Papier ist nicht automatisch
+            die beste Entscheidung. Entscheidend sind unter anderem
+            Verbrauch, Risikobereitschaft, Vertragslaufzeit und
+            die gewünschte Planbarkeit.
+          </p>
+
+          <div class="notice">
+            <strong class="gold">Wichtig:</strong>
+            Börsen- und Spotmarktpreise können schwanken. Eine
+            marktpreisorientierte Beschaffung kann Chancen eröffnen,
+            bringt aber auch Preisrisiken mit sich. Eine individuelle
+            Prüfung ist deshalb entscheidend.
+          </div>
+        </div>
+
+        <div class="feature-list">
+          <div class="feature">
+            <span class="check">✓</span>
+            <div>
+              <strong>Festpreisverträge</strong>
+              <p>
+                Können bei passenden Konditionen mehr Planungssicherheit
+                für den vereinbarten Zeitraum bieten.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            <div>
+              <strong>Spotmarkt-orientierte Beschaffung</strong>
+              <p>
+                Preise orientieren sich stärker an kurzfristigen
+                Marktbewegungen. Verbrauchsprofil und Risikomanagement
+                spielen dabei eine wichtige Rolle.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            <div>
+              <strong>Terminmarkt und Tranchenmodelle</strong>
+              <p>
+                Je nach Angebot kann der Energiebedarf zeitlich gestaffelt
+                beschafft werden, statt den gesamten Bedarf auf einmal
+                abzusichern.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="check">✓</span>
+            <div>
+              <strong>Individuelle Bewertung</strong>
+              <p>
+                Wir helfen dabei, Möglichkeiten und Risiken verständlich
+                gegenüberzustellen. Ob ein Modell verfügbar und sinnvoll
+                ist, hängt vom Einzelfall ab.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Weitere Potenziale</span>
+          <h2>Energie endet nicht beim Tarif</h2>
+          <p>
+            Neben der Beschaffung können weitere Themen relevant sein.
+            Welche davon für Ihr Unternehmen passen, hängt von den
+            gesetzlichen Voraussetzungen, der betrieblichen Situation
+            und den vorhandenen Daten ab.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <span class="model-tag">Steuern & Entlastung</span>
+            <h3>Stromsteuerentlastung prüfen</h3>
+            <p>
+              Bestimmte Unternehmen können unter gesetzlichen
+              Voraussetzungen für bestimmte Stromverbräuche
+              Entlastungen beantragen. Wir unterstützen bei der
+              ersten Einordnung möglicher Ansatzpunkte.
+            </p>
+            <p>
+              Ob ein Anspruch besteht, muss anhand der jeweils geltenden
+              Regelungen und Ihrer konkreten Situation geprüft werden.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="model-tag">Effizienz & Analyse</span>
+            <h3>Energieeffizienz und Energieaudits</h3>
+            <p>
+              Eine strukturierte Betrachtung des Energieverbrauchs kann
+              Schwachstellen und mögliche Maßnahmen sichtbar machen.
+              Dazu gehört bei entsprechender Eignung auch die Prüfung
+              eines Energieaudits nach DIN EN 16247-1.
+            </p>
+            <p>
+              Ob eine gesetzliche Auditpflicht besteht, hängt unter
+              anderem von den jeweils geltenden gesetzlichen Kriterien ab.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="model-tag">Erzeugung vor Ort</span>
+            <h3>Photovoltaik-Contracting</h3>
+            <p>
+              Prüfen Sie, ob Ihre Dach- oder Freiflächen für eine
+              Photovoltaiklösung infrage kommen. Bei Contracting-Modellen
+              können Finanzierung, Errichtung und Betrieb je nach
+              Vertragsmodell durch einen externen Partner erfolgen.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="model-tag">Unternehmensberatung</span>
+            <h3>Individuelle Energiekonzepte</h3>
+            <p>
+              Von der Einordnung vorhandener Energieverträge bis zur
+              Betrachtung weiterer Maßnahmen: Ziel ist eine nachvollziehbare
+              Entscheidungsgrundlage für Ihre nächsten Schritte.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted-section" id="ablauf">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">So arbeiten wir</span>
+          <h2>In vier Schritten zur passenden Lösung</h2>
+          <p>
+            Transparent, strukturiert und an Ihrer tatsächlichen
+            Ausgangssituation orientiert.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Kontakt</h3>
+            <p>
+              Sie schildern uns kurz Ihr Anliegen und die aktuelle
+              Situation Ihres Unternehmens.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Bedarf verstehen</h3>
+            <p>
+              Wir klären die wichtigsten Eckdaten, Ziele und
+              Anforderungen Ihrer Energieversorgung.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Möglichkeiten prüfen</h3>
+            <p>
+              Relevante Beschaffungsmodelle und weitere
+              Optimierungspotenziale werden eingeordnet.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">04</span>
+            <h3>Nächste Schritte</h3>
+            <p>
+              Sie erhalten eine verständliche Einschätzung der
+              möglichen Optionen und des weiteren Vorgehens.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <span class="eyebrow">Der erste Schritt</span>
+            <h2>Wie gut ist Ihr Unternehmen energetisch aufgestellt?</h2>
+            <p>
+              Lassen Sie uns Ihre Situation gemeinsam einordnen.
+              Die erste Anfrage ist unverbindlich.
+            </p>
+          </div>
+
+          <a class="button" href="#kontakt">Gespräch anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="kontakt">
+      <div class="container contact-layout">
+        <div>
+          <span class="eyebrow">Kontakt</span>
+          <h2>Lassen Sie uns über Ihre Energieversorgung sprechen.</h2>
+          <p>
+            Teilen Sie uns die wichtigsten Eckdaten mit. Wir melden uns,
+            um Ihr Anliegen zu besprechen und mögliche nächste Schritte
+            zu klären.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <strong>E-Mail</strong>
+              <a href="mailto:info@and-agency.de">info@and-agency.de</a>
+            </div>
+
+            <div class="contact-detail">
+              <strong>Telefon</strong>
+              <a href="tel:+491601238601">+49 160 1238601</a>
+            </div>
+
+            <div class="contact-detail">
+              <strong>WhatsApp</strong>
+              <a
+                href="https://wa.me/491601238601"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Nachricht über WhatsApp senden</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Unverbindliche Anfrage</h3>
+          <p>Die mit * markierten Felder sind Pflichtfelder.</p>
+
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="firstName">Vorname *</label>
+              <input id="firstName" name="firstName" autocomplete="given-name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="lastName">Nachname *</label>
+              <input id="lastName" name="lastName" autocomplete="family-name" required>
+            </div>
+
+            <div class="form-field full">
+              <label for="company">Unternehmen *</label>
+              <input id="company" name="company" autocomplete="organization" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Geschäftliche E-Mail *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Telefonnummer</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+
+            <div class="form-field full">
+              <label for="consumption">Jährlicher Energieverbrauch (optional)</label>
+              <select id="consumption" name="consumption">
+                <option value="">Bitte auswählen</option>
+                <option value="Unter 50.000 kWh">Unter 50.000 kWh</option>
+                <option value="50.000–100.000 kWh">50.000–100.000 kWh</option>
+                <option value="100.000–250.000 kWh">100.000–250.000 kWh</option>
+                <option value="250.000–500.000 kWh">250.000–500.000 kWh</option>
+                <option value="Über 500.000 kWh">Über 500.000 kWh</option>
+                <option value="Noch unbekannt">Noch unbekannt</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="service">Worum geht es? *</label>
+              <select id="service" name="service" required>
+                <option value="">Bitte auswählen</option>
+                <option value="Strombeschaffung">Strombeschaffung</option>
+                <option value="Gasbeschaffung">Gasbeschaffung</option>
+                <option value="Strom und Gas">Strom und Gas</option>
+                <option value="Beschaffungsstrategie">Beschaffungsstrategie</option>
+                <option value="Stromsteuerentlastung">Stromsteuerentlastung</option>
+                <option value="Energieeffizienz oder Energieaudit">Energieeffizienz oder Energieaudit</option>
+                <option value="Photovoltaik-Contracting">Photovoltaik-Contracting</option>
+                <option value="Allgemeine Energieberatung">Allgemeine Energieberatung</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="message">Ihre Nachricht *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Beschreiben Sie kurz Ihr Anliegen."
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Dieses Feld bitte leer lassen</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="privacy-consent">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <span>
+              Ich habe die
+              <a
+                href="https://www.and-agency.de/#datenschutz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Datenschutzhinweise</a>
+              gelesen und zur Kenntnis genommen. *
+            </span>
+          </label>
+
+          <button class="button form-submit" id="submitButton" type="submit">
+            Anfrage absenden
+          </button>
+
+          <p class="form-note">
+            Bitte senden Sie über dieses Formular keine vertraulichen
+            Dokumente oder sensiblen Daten.
+          </p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="https://www.and-agency.de/" aria-label="AND Agency Startseite">
+            <img
+              src="/795B305C-2494-44F8-8B59-2EC5C0659FEC.png"
+              alt="AND Agency"
+            >
+          </a>
+          <p>Energie. Optimiert.</p>
+        </div>
+
+        <nav class="legal-links" aria-label="Rechtliche Informationen">
+          <a href="https://www.and-agency.de/#impressum">Impressum</a>
+          <span aria-hidden="true">|</span>
+          <a href="https://www.and-agency.de/#datenschutz">Datenschutz</a>
+          <span aria-hidden="true">|</span>
+          <a href="mailto:info@and-agency.de">Kontakt</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> AND Agency. Alle Rechte vorbehalten.</p>
+        <p>Strom- und Gasberatung für Unternehmen.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+    const submitButton = document.getElementById("submitButton");
+
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      formMessage.className = "form-message";
+      formMessage.textContent = "";
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      // Die Checkbox dient der Bestätigung auf der Seite,
+      // wird aber nicht als Kontaktfeld an die API übertragen.
+      delete payload.privacy;
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Wird gesendet …";
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error("Die Anfrage konnte nicht gesendet werden.");
+        }
+
+        formMessage.className = "form-message success";
+        formMessage.textContent =
+          "Vielen Dank! Ihre Anfrage wurde übermittelt. Wir melden uns bei Ihnen.";
+
+        contactForm.reset();
+      } catch (error) {
+        formMessage.className = "form-message error";
+        formMessage.textContent =
+          "Die Anfrage konnte gerade nicht übermittelt werden. Bitte schreiben Sie an info@and-agency.de oder rufen Sie uns an: +49 160 1238601.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Anfrage absenden";
+      }
+    });
+  </script>
+
+</body>
+</html>
