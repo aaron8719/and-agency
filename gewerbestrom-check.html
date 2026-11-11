@@ -1088,14 +1088,15 @@ window.addEventListener("hs-form-event:on-submission:success", async (event) => 
     }
 
     const entries = {
-      firstname: getValue("firstname"),
-      lastname: getValue("lastname"),
-      email: getValue("email"),
-      phone: getValue("phone"),
-      company: getValue("company"),
-      industry: getValue("industry", "branche"),
-      jahrlicher_stromverbrauch_kwh: getValue("jahrlicher_stromverbrauch_kwh")
-    };
+  firstname: getValue("firstname"),
+  lastname: getValue("lastname"),
+  email: getValue("email"),
+  phone: getValue("phone"),
+  company: getValue("company"),
+  industry: getValue("industry"),
+  jahrlicher_stromverbrauch_kwh: getValue("jahrlicher_stromverbrauch_kwh"),
+  zip: getValue("zip")
+};
 
     const params = new URLSearchParams();
 
