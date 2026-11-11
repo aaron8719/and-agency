@@ -1063,18 +1063,67 @@
           um Ihre Anfrage zu bearbeiten und das Gespräch vorzubereiten.
         </p>
 
-        <!-- HubSpot Formular -->
-        <script
-          src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
-          defer>
-        </script>
+        
+<!-- HubSpot Formular -->
+<script>
+window.addEventListener("hs-form-event:on-submission:success", async (event) => {
+  if (event.detail?.formId !== "383952eb-f08d-4344-92d7-fd3d295d5566") {
+    return;
+  }
 
-        <div
-          class="hs-form-frame"
-          data-region="eu1"
-          data-form-id="383952eb-f08d-4344-92d7-fd3d295d5566"
-          data-portal-id="149751775">
-        </div>
+  const bookingUrl = "https://meetings-eu1.hubspot.com/aroesler";
+
+  try {
+    const form = HubSpotFormsV4.getFormFromEvent(event);
+    const fields = await form.getFormFieldValues();
+
+    function getValue(...names) {
+      const field = fields.find(item => {
+        const key = String(item.name || "").split("/").pop().toLowerCase();
+        return names.includes(key);
+      });
+
+      const value = field?.value ?? "";
+      return Array.isArray(value) ? value.join(", ") : String(value);
+    }
+
+    const entries = {
+      firstname: getValue("firstname"),
+      lastname: getValue("lastname"),
+      email: getValue("email"),
+      phone: getValue("phone"),
+      company: getValue("company"),
+      industry: getValue("industry"),
+      jahrlicher_stromverbrauch_kwh: getValue("jahrlicher_stromverbrauch_kwh")
+    };
+
+    const params = new URLSearchParams();
+
+    Object.entries(entries).forEach(([key, value]) => {
+      if (value.trim()) params.set(key, value.trim());
+    });
+
+    window.location.assign(bookingUrl + "?" + params.toString());
+
+  } catch (error) {
+    console.error("HubSpot-Formulardaten konnten nicht übernommen werden:", error);
+    window.location.assign(bookingUrl);
+  }
+});
+</script>
+
+<script
+  src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
+  defer>
+</script>
+
+<div
+  class="hs-form-frame"
+  data-region="eu1"
+  data-form-id="383952eb-f08d-4344-92d7-fd3d295d5566"
+  data-portal-id="149751775">
+</div>
+
 
         <div class="form-privacy">
           Mit dem Absenden des Formulars übermitteln Sie Ihre Angaben
