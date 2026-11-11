@@ -22,7 +22,6 @@
       --gold: #c7a45b;
       --gold-light: #e2c98f;
       --cream: #f5f2eb;
-      --white: #fff;
       --muted: #aaa69d;
       --line: rgba(199,164,91,.22);
       --text-dark: #25241f;
@@ -36,7 +35,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -108,6 +107,7 @@
       transition: .2s ease;
       border: 1px solid var(--gold);
       text-align: center;
+      cursor: pointer;
     }
 
     .button:hover {
@@ -467,6 +467,73 @@
       font-size: 13px;
     }
 
+    /* HUBSPOT FORM */
+
+    .form-section {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(199,164,91,.12), transparent 55%),
+        #171715;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .form-section .section-intro p {
+      color: #c9c5bc;
+    }
+
+    .form-card {
+      max-width: 760px;
+      margin: auto;
+      padding: 38px;
+      background: #f5f2eb;
+      color: #25241f;
+      border-radius: 7px;
+      border: 1px solid rgba(199,164,91,.35);
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .form-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+      color: #25241f;
+    }
+
+    .form-card > p {
+      color: #625f57;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hs-form-frame {
+      width: 100%;
+      min-height: 300px;
+    }
+
+    .form-privacy {
+      margin-top: 20px;
+      padding-top: 17px;
+      border-top: 1px solid #ded8cc;
+      color: #69655d;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .form-privacy a {
+      color: #80632f;
+      text-decoration: underline;
+    }
+
+    .booking-after-form {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .booking-after-form p {
+      color: #625f57;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
     /* VIDEO */
 
     .video-placeholder {
@@ -741,6 +808,10 @@
         padding: 28px 20px;
       }
 
+      .form-card {
+        padding: 23px 17px;
+      }
+
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
@@ -770,8 +841,8 @@
 
     <div class="nav-right">
       <span class="nav-label">Gewerbestrom für Unternehmen</span>
-      <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
-        Termin vereinbaren <span class="arrow">→</span>
+      <a class="button" href="#formular">
+        Gewerbestrom-Check <span class="arrow">→</span>
       </a>
     </div>
   </div>
@@ -803,8 +874,8 @@
           ob es für Ihr Unternehmen sinnvolle Optimierungsmöglichkeiten gibt.
         </p>
 
-        <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
-          Kostenlosen Gewerbestrom-Check vereinbaren
+        <a class="button" href="#formular">
+          Kostenlosen Gewerbestrom-Check anfragen
           <span class="arrow">→</span>
         </a>
 
@@ -958,6 +1029,65 @@
     </div>
   </section>
 
+  <!-- HUBSPOT FORMULAR -->
+
+  <section class="form-section" id="formular">
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">Kostenlos und unverbindlich</div>
+        <h2>Fordern Sie Ihren persönlichen Gewerbestrom-Check an.</h2>
+        <p>
+          Hinterlassen Sie uns kurz Ihre Kontaktdaten und Ihren jährlichen
+          Stromverbrauch. Anschließend können Sie einen passenden Gesprächstermin auswählen.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <h3>Ihre Unternehmensdaten</h3>
+        <p>
+          Füllen Sie das Formular aus. Wir verwenden Ihre Angaben,
+          um Ihre Anfrage zu bearbeiten und das Gespräch vorzubereiten.
+        </p>
+
+        <!-- HubSpot Formular -->
+        <script
+          src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
+          defer>
+        </script>
+
+        <div
+          class="hs-form-frame"
+          data-region="eu1"
+          data-form-id="383952eb-f08d-4344-92d7-fd3d295d5566"
+          data-portal-id="149751775">
+        </div>
+
+        <div class="form-privacy">
+          Mit dem Absenden des Formulars übermitteln Sie Ihre Angaben
+          zur Bearbeitung Ihrer Anfrage. Weitere Informationen finden Sie
+          in unserer <a href="https://www.and-agency.de/#datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+        </div>
+
+        <div class="booking-after-form">
+          <p>
+            Sie haben das Formular bereits ausgefüllt?
+            Hier können Sie direkt Ihren Gesprächstermin auswählen.
+          </p>
+          <a
+            class="button"
+            href="https://meetings-eu1.hubspot.com/aroesler"
+            target="_blank"
+            rel="noopener">
+            Gesprächstermin auswählen
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- VIDEO PLACEHOLDER -->
 
   <section>
@@ -1000,6 +1130,15 @@
 
         <article class="process-card">
           <div class="process-step">SCHRITT 01</div>
+          <h3>Anfrage senden</h3>
+          <p>
+            Übermitteln Sie Ihre Kontaktdaten und den jährlichen
+            Stromverbrauch über unser Formular.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step">SCHRITT 02</div>
           <h3>Termin vereinbaren</h3>
           <p>
             Wählen Sie einen passenden Gesprächstermin für Ihren
@@ -1008,20 +1147,11 @@
         </article>
 
         <article class="process-card">
-          <div class="process-step">SCHRITT 02</div>
-          <h3>Bedarf besprechen</h3>
-          <p>
-            Wir sprechen über Ihren Betrieb, Ihren Stromverbrauch
-            und Ihre aktuelle Vertragssituation.
-          </p>
-        </article>
-
-        <article class="process-card">
           <div class="process-step">SCHRITT 03</div>
           <h3>Vertrag betrachten</h3>
           <p>
-            Mit den relevanten Informationen und Unterlagen prüfen wir
-            Ihre Ausgangssituation.
+            Wir sprechen über Ihren Betrieb, Ihren Stromverbrauch
+            und Ihre aktuelle Vertragssituation.
           </p>
         </article>
 
@@ -1072,8 +1202,8 @@
           weiter vorgehen möchten.
         </p>
 
-        <a class="button button-outline" href="https://meetings-eu1.hubspot.com/aroesler">
-          Persönliches Gespräch vereinbaren
+        <a class="button button-outline" href="#formular">
+          Gewerbestrom-Check anfragen
           <span class="arrow">→</span>
         </a>
       </div>
@@ -1142,10 +1272,10 @@
         </details>
 
         <details>
-          <summary>Was passiert nach der Terminbuchung?</summary>
+          <summary>Was passiert nach der Anfrage?</summary>
           <p>
-            Sie erhalten eine Terminbestätigung mit den weiteren
-            Informationen zum Gespräch. Im Termin besprechen wir
+            Nach dem Absenden Ihrer Kontaktdaten können Sie einen
+            Gesprächstermin auswählen. Im Termin besprechen wir
             Ihre Ausgangssituation und die möglichen nächsten Schritte.
           </p>
         </details>
@@ -1156,7 +1286,7 @@
 
   <!-- FINAL CTA -->
 
-  <section class="final-cta" id="termin">
+  <section class="final-cta">
     <div class="container">
 
       <div class="eyebrow">Der nächste Schritt</div>
@@ -1167,12 +1297,12 @@
 
       <p>
         Lassen Sie uns gemeinsam einen Blick auf Ihre aktuelle Situation werfen.
-        Vereinbaren Sie jetzt Ihren kostenlosen und unverbindlichen
-        Gewerbestrom-Check.
+        Fordern Sie jetzt Ihren kostenlosen und unverbindlichen
+        Gewerbestrom-Check an.
       </p>
 
-      <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
-        Jetzt kostenlosen Termin vereinbaren
+      <a class="button" href="#formular">
+        Jetzt Gewerbestrom-Check anfragen
         <span class="arrow">→</span>
       </a>
 
