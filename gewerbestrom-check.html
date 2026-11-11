@@ -1093,7 +1093,7 @@ window.addEventListener("hs-form-event:on-submission:success", async (event) => 
       email: getValue("email"),
       phone: getValue("phone"),
       company: getValue("company"),
-      industry: getValue("industry"),
+      industry: getValue("industry", "branche"),
       jahrlicher_stromverbrauch_kwh: getValue("jahrlicher_stromverbrauch_kwh")
     };
 
