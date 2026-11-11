@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+
+  <title>Gewerbestrom prüfen lassen | AND Agency</title>
+  <meta name="description" content="Gewerbestrom für Unternehmen ab 100.000 kWh: Lassen Sie Ihren Stromvertrag, Verbrauch und mögliche Optimierungen unverbindlich prüfen.">
+  <link rel="canonical" href="https://www.and-agency.de/gewerbestrom-check.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #10100f;
+      --dark: #171715;
+      --panel: #20201d;
+      --gold: #c7a45b;
+      --gold-light: #e2c98f;
+      --cream: #f5f2eb;
+      --white: #fff;
+      --muted: #aaa69d;
+      --line: rgba(199,164,91,.22);
+      --text-dark: #25241f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--cream);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.16;
+    }
+
+    h1 {
+      font-size: clamp(39px, 5.2vw, 65px);
+      letter-spacing: -.8px;
+    }
+
+    h2 {
+      font-size: clamp(31px, 4vw, 46px);
+    }
+
+    p {
+      line-height: 1.75;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      min-height: 54px;
+      border-radius: 4px;
+      background: var(--gold);
+      color: #14130f;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .2s ease;
+      border: 1px solid var(--gold);
+      text-align: center;
+    }
+
+    .button:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .button .arrow {
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    .button-outline:hover {
+      color: var(--black);
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,16,15,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo img {
+      max-width: 175px;
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-label {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav .button {
+      min-height: 43px;
+      padding: 11px 17px;
+      font-size: 12px;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 90px;
+      background:
+        radial-gradient(ellipse at 80% 15%, rgba(199,164,91,.16), transparent 38%),
+        linear-gradient(120deg, #10100f 20%, #1b1a16 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -230px;
+      bottom: -270px;
+      border: 1px solid rgba(199,164,91,.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 45px rgba(199,164,91,.025),
+        0 0 0 90px rgba(199,164,91,.02);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 65px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 25px;
+    }
+
+    .hero-copy {
+      color: #c9c5bc;
+      font-size: 17px;
+      max-width: 630px;
+      margin-bottom: 30px;
+    }
+
+    .qualification {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: rgba(199,164,91,.07);
+      border-radius: 3px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 23px;
+    }
+
+    .qualification span {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero-small {
+      color: #aaa69d;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .hero-panel {
+      background: rgba(32,32,29,.92);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 34px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .panel-kicker {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .hero-panel h3 {
+      font-size: 27px;
+      margin-bottom: 20px;
+      color: var(--cream);
+    }
+
+    .panel-list {
+      list-style: none;
+    }
+
+    .panel-list li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      color: #d5d1c8;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .panel-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .panel-list b {
+      color: var(--gold-light);
+    }
+
+    /* TRUST STRIP */
+
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #171715;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 24px 0;
+      text-align: center;
+    }
+
+    .trust-item {
+      color: #d6d1c7;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .trust-item span {
+      color: var(--gold-light);
+      margin-right: 8px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-intro {
+      max-width: 740px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-intro p {
+      color: var(--muted);
+      margin-top: 17px;
+      font-size: 15px;
+    }
+
+    .light {
+      background: var(--cream);
+      color: var(--text-dark);
+    }
+
+    .light .section-intro p {
+      color: #625f57;
+    }
+
+    .light .eyebrow {
+      color: #97783d;
+    }
+
+    /* TARGET GROUPS */
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .audience-card {
+      background: #fff;
+      border: 1px solid #e7e0d3;
+      border-radius: 5px;
+      padding: 29px;
+      transition: .2s;
+    }
+
+    .audience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.07);
+    }
+
+    .audience-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #dfd1b3;
+      color: #94743b;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .audience-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #25241f;
+    }
+
+    .audience-card p {
+      color: #666158;
+      font-size: 13px;
+    }
+
+    .audience-note {
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding: 24px;
+      border-left: 3px solid var(--gold);
+      background: #ebe5d9;
+      color: #49463f;
+      font-size: 14px;
+    }
+
+    /* CONSUMPTION */
+
+    .consumption-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 42px;
+      background: linear-gradient(120deg, #22211d, #171715);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .consumption-box h2 {
+      font-size: clamp(29px, 4vw, 40px);
+      margin-bottom: 14px;
+    }
+
+    .consumption-value {
+      color: var(--gold-light);
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin: 20px 0;
+    }
+
+    .consumption-box p {
+      color: #c2beb5;
+      max-width: 650px;
+      margin: auto;
+      font-size: 14px;
+    }
+
+    /* ANALYSIS POINTS */
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .analysis-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 5px;
+    }
+
+    .analysis-number {
+      color: #e2c98f;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .analysis-card h3 {
+      color: #f5f2eb;
+      font-size: 23px;
+      margin-bottom: 13px;
+    }
+
+    .analysis-card p {
+      color: #c9c5bc;
+      font-size: 13px;
+    }
+
+    /* VIDEO */
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background:
+        radial-gradient(ellipse at center, rgba(199,164,91,.09), transparent 55%),
+        #1c1c19;
+      border: 1px dashed rgba(199,164,91,.45);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+    }
+
+    .video-placeholder strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .process-card {
+      padding: 25px 20px;
+      border-top: 2px solid var(--gold);
+      background: #fff;
+    }
+
+    .process-step {
+      color: #987a43;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    .process-card h3 {
+      color: #25241f;
+      font-size: 21px;
+      margin: 14px 0 10px;
+    }
+
+    .process-card p {
+      color: #69655d;
+      font-size: 13px;
+    }
+
+    /* PERSONAL CONTACT */
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 55px;
+      align-items: center;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: 1px solid var(--line);
+    }
+
+    .profile-copy h2 {
+      margin-bottom: 20px;
+    }
+
+    .profile-copy p {
+      color: #c3beb5;
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 21px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      color: #987a43;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      color: #625f57;
+      padding-top: 13px;
+      font-size: 13px;
+      max-width: 760px;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(199,164,91,.13), transparent 55%),
+        #171715;
+      border-top: 1px solid var(--line);
+    }
+
+    .final-cta h2 {
+      max-width: 780px;
+      margin: 0 auto 18px;
+    }
+
+    .final-cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #c9c5bc;
+      font-size: 14px;
+    }
+
+    .final-note {
+      margin-top: 14px;
+      color: #aaa69d;
+      font-size: 11px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0c0c0b;
+      padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #aaa69d;
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .audience-grid,
+      .analysis-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .profile-photo {
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 34px, 1160px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo img {
+        max-width: 130px;
+      }
+
+      .nav-label {
+        display: none;
+      }
+
+      .nav-right {
+        gap: 0;
+      }
+
+      .nav .button {
+        padding: 10px 12px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 67px 0 60px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .hero-panel {
+        padding: 25px;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        text-align: left;
+      }
+
+      .audience-grid,
+      .analysis-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .audience-card,
+      .analysis-card {
+        padding: 25px;
+      }
+
+      .consumption-box {
+        padding: 28px 20px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 16px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="https://www.and-agency.de/">
+      <img
+        src="https://www.and-agency.de/795B305C-2494-44F8-8B59-2EC5C0659FEC.png"
+        alt="AND Agency"
+      >
+    </a>
+
+    <div class="nav-right">
+      <span class="nav-label">Gewerbestrom für Unternehmen</span>
+      <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
+        Termin vereinbaren <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">Energiekosten im Unternehmen im Blick behalten</div>
+
+        <div class="qualification">
+          <span></span>
+          Für Unternehmen ab ca. 100.000 kWh Jahresverbrauch
+        </div>
+
+        <h1>
+          Ihr Unternehmen verbraucht viel Strom?
+          <span class="gold">Dann sollten Sie Ihren Gewerbestromvertrag prüfen lassen.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Wir betrachten Ihren bestehenden Stromvertrag, Ihren jährlichen
+          Verbrauch und Ihre aktuellen Konditionen. Gemeinsam prüfen wir,
+          ob es für Ihr Unternehmen sinnvolle Optimierungsmöglichkeiten gibt.
+        </p>
+
+        <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
+          Kostenlosen Gewerbestrom-Check vereinbaren
+          <span class="arrow">→</span>
+        </a>
+
+        <div class="hero-small">
+          Erstgespräch kostenlos und unverbindlich. Keine Verpflichtung zum Vertragswechsel.
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="panel-kicker">Ihr Gewerbestrom-Check</div>
+        <h3>Was wir gemeinsam unter die Lupe nehmen</h3>
+
+        <ul class="panel-list">
+          <li><b>01</b> Bestehende Vertragskonditionen</li>
+          <li><b>02</b> Jährlicher Stromverbrauch</li>
+          <li><b>03</b> Laufzeiten und Vertragsbedingungen</li>
+          <li><b>04</b> Individuelle Anforderungen Ihres Betriebs</li>
+          <li><b>05</b> Mögliche Alternativen und Optimierungen</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+
+  <div class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item"><span>✓</span> Persönliche Beratung</div>
+      <div class="trust-item"><span>✓</span> Unverbindliche Ersteinschätzung</div>
+      <div class="trust-item"><span>✓</span> Auf Unternehmen ausgerichtet</div>
+    </div>
+  </div>
+
+  <!-- TARGET GROUPS -->
+
+  <section class="light">
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">Für wen ist der Check gedacht?</div>
+        <h2>Wenn Strom ein wesentlicher Kostenfaktor Ihres Betriebs ist.</h2>
+        <p>
+          Wir richten uns an Gewerbe- und Industriebetriebe mit einem
+          entsprechenden jährlichen Strombedarf.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+
+        <article class="audience-card">
+          <div class="audience-icon">01</div>
+          <h3>Industrie und Produktion</h3>
+          <p>
+            Produktionsunternehmen, Fertigungsbetriebe, Werkstätten und
+            Unternehmen mit energieintensiven Anlagen.
+          </p>
+        </article>
+
+        <article class="audience-card">
+          <div class="audience-icon">02</div>
+          <h3>Hotels und Gastronomie</h3>
+          <p>
+            Hotels, Restaurants, Großküchen und gastronomische Betriebe
+            mit regelmäßig hohem Stromverbrauch.
+          </p>
+        </article>
+
+        <article class="audience-card">
+          <div class="audience-icon">03</div>
+          <h3>Pflege und Gesundheit</h3>
+          <p>
+            Pflegeeinrichtungen, Kliniken, medizinische Einrichtungen und
+            weitere gewerbliche Versorgungsbetriebe.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="audience-note">
+        <strong>Wichtig:</strong> Unser Angebot richtet sich zunächst
+        insbesondere an Unternehmen mit einem Jahresverbrauch ab etwa
+        100.000 kWh. Wenn Sie unsicher sind, ob Ihr Betrieb dazu passt,
+        können Sie dies im Erstgespräch klären.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONSUMPTION -->
+
+  <section>
+    <div class="container">
+      <div class="consumption-box">
+        <div class="eyebrow">Unsere Ausrichtung</div>
+        <h2>Für Unternehmen mit relevantem Energiebedarf</h2>
+        <div class="consumption-value">100.000 kWh+</div>
+        <p>
+          Ab diesem jährlichen Stromverbrauch kann es besonders sinnvoll
+          sein, bestehende Vertragsbedingungen und den individuellen
+          Energiebedarf genauer zu betrachten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSIS POINTS -->
+
+  <section class="light">
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">Was wird geprüft?</div>
+        <h2>Keine pauschalen Versprechen. Ein Blick auf Ihre konkrete Situation.</h2>
+        <p>
+          Jeder Betrieb hat andere Voraussetzungen. Deshalb betrachten
+          wir die entscheidenden Punkte Ihres bestehenden Gewerbestromvertrags.
+        </p>
+      </div>
+
+      <div class="analysis-grid">
+
+        <article class="analysis-card">
+          <div class="analysis-number">PRÜFPUNKT 01</div>
+          <h3>Ihr aktueller Vertrag</h3>
+          <p>
+            Welche Konditionen gelten aktuell? Welche Laufzeiten,
+            Preisbestandteile und Vertragsbedingungen sind vereinbart?
+          </p>
+        </article>
+
+        <article class="analysis-card">
+          <div class="analysis-number">PRÜFPUNKT 02</div>
+          <h3>Ihr Verbrauch</h3>
+          <p>
+            Wie hoch ist Ihr Jahresverbrauch? Welche Anforderungen
+            ergeben sich aus den Abläufen und dem Bedarf Ihres Betriebs?
+          </p>
+        </article>
+
+        <article class="analysis-card">
+          <div class="analysis-number">PRÜFPUNKT 03</div>
+          <h3>Ihre Möglichkeiten</h3>
+          <p>
+            Welche Alternativen oder Optimierungsansätze könnten zu Ihrer
+            Ausgangssituation passen? Wir besprechen mögliche nächste Schritte.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO PLACEHOLDER -->
+
+  <section>
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">AND Agency</div>
+        <h2>Wir erklären Ihnen den Gewerbestrom-Check persönlich.</h2>
+        <p>
+          Erfahren Sie, wie wir vorgehen und welche Informationen für
+          eine erste Einschätzung hilfreich sind.
+        </p>
+      </div>
+
+      <div class="video-placeholder">
+        <div>
+          <strong>Persönliches Vorstellungsvideo</strong>
+          <span>Hier wird später das 16:9-Video eingebunden.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="light">
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">So funktioniert es</div>
+        <h2>In vier Schritten zu mehr Klarheit.</h2>
+        <p>
+          Der Ablauf ist einfach und transparent. Sie wissen jederzeit,
+          was als Nächstes passiert.
+        </p>
+      </div>
+
+      <div class="process-grid">
+
+        <article class="process-card">
+          <div class="process-step">SCHRITT 01</div>
+          <h3>Termin vereinbaren</h3>
+          <p>
+            Wählen Sie einen passenden Gesprächstermin für Ihren
+            kostenlosen Gewerbestrom-Check.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step">SCHRITT 02</div>
+          <h3>Bedarf besprechen</h3>
+          <p>
+            Wir sprechen über Ihren Betrieb, Ihren Stromverbrauch
+            und Ihre aktuelle Vertragssituation.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step">SCHRITT 03</div>
+          <h3>Vertrag betrachten</h3>
+          <p>
+            Mit den relevanten Informationen und Unterlagen prüfen wir
+            Ihre Ausgangssituation.
+          </p>
+        </article>
+
+        <article class="process-card">
+          <div class="process-step">SCHRITT 04</div>
+          <h3>Optionen besprechen</h3>
+          <p>
+            Sie erhalten eine verständliche Einordnung und können
+            anschließend in Ruhe über weitere Schritte entscheiden.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL CONTACT -->
+
+  <section>
+    <div class="container profile-grid">
+
+      <div>
+        <img
+          class="profile-photo"
+          src="https://www.and-agency.de/assets/portrait-aaron.jpg"
+          alt="Persönlicher Ansprechpartner bei AND Agency"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="profile-copy">
+        <div class="eyebrow">Ihr Ansprechpartner</div>
+        <h2>Persönlich statt unübersichtlich.</h2>
+
+        <p>
+          Bei AND Agency steht die individuelle Situation Ihres
+          Unternehmens im Mittelpunkt.
+        </p>
+
+        <p>
+          Wir möchten Ihre aktuelle Energiesituation verständlich
+          einordnen, relevante Vertragsdetails betrachten und mögliche
+          Optionen nachvollziehbar mit Ihnen besprechen.
+        </p>
+
+        <p>
+          Sie entscheiden selbst, ob und wie Sie nach dem Erstgespräch
+          weiter vorgehen möchten.
+        </p>
+
+        <a class="button button-outline" href="https://meetings-eu1.hubspot.com/aroesler">
+          Persönliches Gespräch vereinbaren
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="light">
+    <div class="container">
+
+      <div class="section-intro">
+        <div class="eyebrow">Häufige Fragen</div>
+        <h2>Was Sie vor dem Gespräch wissen sollten.</h2>
+        <p>
+          Die wichtigsten Antworten rund um den Gewerbestrom-Check.
+        </p>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Was kostet der erste Gewerbestrom-Check?</summary>
+          <p>
+            Das erste Gespräch und die unverbindliche Ersteinschätzung
+            sind kostenlos. Etwaige weiterführende Leistungen oder Kosten
+            werden vorab transparent besprochen.
+          </p>
+        </details>
+
+        <details>
+          <summary>Muss ich meinen bestehenden Stromvertrag kündigen?</summary>
+          <p>
+            Nein. Die Anfrage und das Erstgespräch verpflichten Sie
+            weder zu einer Kündigung noch zu einem Vertragswechsel.
+          </p>
+        </details>
+
+        <details>
+          <summary>Kann mir eine bestimmte Ersparnis garantiert werden?</summary>
+          <p>
+            Nein. Ob eine Optimierung möglich ist und welche Auswirkungen
+            sie hätte, hängt von Ihrem bestehenden Vertrag, Ihrem Verbrauch
+            und den verfügbaren Konditionen ab.
+          </p>
+        </details>
+
+        <details>
+          <summary>Welche Unterlagen sollte ich bereithalten?</summary>
+          <p>
+            Hilfreich ist Ihre aktuelle oder letzte Stromrechnung.
+            Falls vorhanden, können auch Ihr bestehender Vertrag und
+            weitere Verbrauchsinformationen nützlich sein.
+          </p>
+        </details>
+
+        <details>
+          <summary>Ist das Angebot auch für kleinere Unternehmen geeignet?</summary>
+          <p>
+            Unsere Kampagne richtet sich zunächst insbesondere an
+            Unternehmen ab etwa 100.000 kWh Jahresverbrauch.
+            Ob ein Check auch bei einem geringeren Verbrauch sinnvoll
+            ist, lässt sich individuell besprechen.
+          </p>
+        </details>
+
+        <details>
+          <summary>Was passiert nach der Terminbuchung?</summary>
+          <p>
+            Sie erhalten eine Terminbestätigung mit den weiteren
+            Informationen zum Gespräch. Im Termin besprechen wir
+            Ihre Ausgangssituation und die möglichen nächsten Schritte.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta" id="termin">
+    <div class="container">
+
+      <div class="eyebrow">Der nächste Schritt</div>
+
+      <h2>
+        Wissen Sie, ob Ihr Gewerbestromvertrag noch zu Ihrem Unternehmen passt?
+      </h2>
+
+      <p>
+        Lassen Sie uns gemeinsam einen Blick auf Ihre aktuelle Situation werfen.
+        Vereinbaren Sie jetzt Ihren kostenlosen und unverbindlichen
+        Gewerbestrom-Check.
+      </p>
+
+      <a class="button" href="https://meetings-eu1.hubspot.com/aroesler">
+        Jetzt kostenlosen Termin vereinbaren
+        <span class="arrow">→</span>
+      </a>
+
+      <div class="final-note">
+        Kostenloses Erstgespräch · Unverbindlich · Ohne Verpflichtung zum Wechsel
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+
+    <div>
+      © <span id="year"></span> AND Agency. Alle Rechte vorbehalten.
+    </div>
+
+    <nav class="footer-links" aria-label="Rechtliche Informationen">
+      <a href="https://www.and-agency.de/#impressum">Impressum</a>
+      <a href="https://www.and-agency.de/#datenschutz">Datenschutz</a>
+      <a href="https://wa.me/491601238601">Kontakt</a>
+    </nav>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
