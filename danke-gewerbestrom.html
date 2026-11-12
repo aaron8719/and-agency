@@ -25,7 +25,19 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '30196578849932133');
 fbq('track', 'PageView');
-</script>
+// Meta-Ereignis: erfolgreicher Termin
+const bookingParams = new URLSearchParams(window.location.search);
+
+if (bookingParams.get('booking') === 'success') {
+  fbq('track', 'Schedule');
+
+  // Kennzeichnung aus der URL entfernen,
+  // damit ein Neuladen nicht erneut zählt.
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.searchParams.delete('booking');
+
+  window.history.replaceState({}, document.title, cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
+}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Vielen Dank für Ihre Buchung | AND Agency</title>
