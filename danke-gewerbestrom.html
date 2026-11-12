@@ -298,8 +298,53 @@
       padding-top: 17px;
       border-top: 1px solid #ded7c9;
     }
+/* UPLOAD-ERFOLGSBESTÄTIGUNG */
 
-    /* KONTAKT */
+.upload-success {
+  text-align: center;
+  padding: 30px 10px;
+  animation: successAppear .6s ease both;
+}
+
+.upload-success[hidden] {
+  display: none;
+}
+
+.success-check {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e9dfc9;
+  color: #98783e;
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.upload-success h2 {
+  color: var(--text);
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.upload-success p {
+  color: #625e55;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+@keyframes successAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}    /* KONTAKT */
 
     .contact-section {
       text-align: center;
