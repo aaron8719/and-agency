@@ -517,6 +517,35 @@
 
           <!-- HUBSPOT-UPLOAD-FORMULAR -->
 
+<script>
+(() => {
+  const uploadFormId = "3116ee77-9794-48ef-9eb5-9d2d461d272d";
+  const storageKey = "andAgencyGewerbestromEmail";
+
+  window.addEventListener("hs-form-event:on-ready", (event) => {
+    if (event.detail?.formId !== uploadFormId) return;
+
+    const email = sessionStorage.getItem(storageKey);
+    if (!email) {
+      console.warn("Keine gespeicherte Kunden-E-Mail gefunden.");
+      return;
+    }
+
+    try {
+      const form = HubSpotFormsV4.getFormFromEvent(event);
+      form.setFieldValue("0-1/email", email);
+      console.log("E-Mail wurde übertragen.");
+    } catch (error) {
+      console.error("E-Mail konnte nicht übertragen werden:", error);
+    }
+  });
+
+  window.addEventListener("hs-form-event:on-submission:success", (event) => {
+    if (event.detail?.formId !== uploadFormId) return;
+    sessionStorage.removeItem(storageKey);
+  });
+})();
+</script>
           <script
             src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
             defer>
