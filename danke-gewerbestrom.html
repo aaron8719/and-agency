@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vielen Dank für Ihre Buchung | AND Agency</title>
+  <meta name="description" content="Vielen Dank für Ihre Terminbuchung bei AND Agency. Bereiten Sie Ihren Gewerbestrom-Check optimal vor und laden Sie Ihre Stromrechnung freiwillig hoch.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #10100f;
+      --dark: #171715;
+      --gold: #c7a45b;
+      --gold-light: #e2c98f;
+      --cream: #f5f1e8;
+      --muted: #aaa69d;
+      --text-dark: #25241f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(100% - 40px, 900px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .logo {
+      display: block;
+      width: 155px;
+      max-width: 55%;
+      height: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 0 45px;
+    }
+
+    .success-icon {
+      width: 66px;
+      height: 66px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 25px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #c5c1b8;
+      font-size: 17px;
+    }
+
+    .video-section {
+      padding: 15px 0 65px;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #20201d;
+      border: 1px solid rgba(199,164,91,.35);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+    }
+
+    .play-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      padding-left: 4px;
+      margin-bottom: 17px;
+    }
+
+    .video-placeholder strong {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .video-placeholder small {
+      font-size: 13px;
+    }
+
+    .upload-section {
+      padding: 0 0 75px;
+    }
+
+    .upload-card {
+      background: var(--cream);
+      color: var(--text-dark);
+      border-radius: 16px;
+      padding: 42px;
+      box-shadow: 0 15px 45px rgba(0,0,0,.2);
+    }
+
+    .upload-label {
+      color: #8c6c32;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .upload-card h2 {
+      font-size: clamp(26px, 4vw, 34px);
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .upload-intro {
+      color: #5e5b53;
+      font-size: 15px;
+      margin-bottom: 25px;
+      max-width: 700px;
+    }
+
+    .upload-note {
+      font-size: 13px;
+      color: #777166;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #ded8ca;
+    }
+
+    /* HubSpot-Formular */
+    .hs-form-frame {
+      width: 100%;
+      min-height: 150px;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding: 0 0 75px;
+    }
+
+    .contact-section h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact-section p {
+      color: #c5c1b8;
+      margin-bottom: 22px;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 14px 25px;
+      border-radius: 5px;
+      transition: background .2s ease;
+    }
+
+    .whatsapp-button:hover {
+      background: var(--gold-light);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 900px);
+      }
+
+      header {
+        padding: 22px 0;
+      }
+
+      .hero {
+        padding: 55px 0 35px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .video-section {
+        padding-bottom: 45px;
+      }
+
+      .upload-section {
+        padding-bottom: 55px;
+      }
+
+      .upload-card {
+        padding: 26px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer a {
+        margin: 0 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="container">
+        <a href="https://www.and-agency.de">
+          <img
+            class="logo"
+            src="https://www.and-agency.de/795B305C-2494-44F8-8B59-2EC5C0659FEC.png"
+            alt="AND Agency Logo">
+        </a>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- DANKE-BEREICH -->
+      <section class="hero">
+        <div class="container">
+
+          <div class="success-icon">✓</div>
+
+          <div class="eyebrow">AND Agency · Gewerbestrom</div>
+
+          <h1>
+            Vielen Dank für<br>
+            Ihre <span>Buchung!</span>
+          </h1>
+
+          <p class="hero-text">
+            Ihr Termin wurde erfolgreich gebucht. Wir freuen uns auf das
+            Gespräch mit Ihnen und darauf, gemeinsam Ihre aktuelle
+            Gewerbestrom-Situation zu prüfen.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- VIDEO-PLATZHALTER -->
+      <section class="video-section">
+        <div class="container">
+
+          <div class="video-placeholder">
+            <div class="play-icon">▶</div>
+            <strong>Ein kurzes Wort zur Vorbereitung</strong>
+            <small>Hier wird später Ihr persönliches Begrüßungsvideo eingebunden.</small>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- STROMRECHNUNG UPLOAD -->
+      <section class="upload-section">
+        <div class="container">
+
+          <div class="upload-card">
+
+            <div class="upload-label">Optionale Vorbereitung</div>
+
+            <h2>Ihre Stromrechnung für eine optimale Vorbereitung</h2>
+
+            <p class="upload-intro">
+              Laden Sie gerne Ihre aktuelle Jahresabrechnung als PDF oder
+              Foto hoch. Falls Ihnen keine Jahresabrechnung vorliegt,
+              reichen alternativ die letzten ein bis zwei Monatsabrechnungen
+              aus. So können wir Ihren bestehenden Tarif und Verbrauch
+              bereits vor unserem Gespräch prüfen.
+            </p>
+
+            <!-- AND AGENCY – HUBSPOT STROMRECHNUNGS-UPLOAD -->
+            <script
+              src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
+              defer>
+            </script>
+
+            <div
+              class="hs-form-frame"
+              data-region="eu1"
+              data-form-id="3116ee77-9794-48ef-9eb5-9d2d461d272d"
+              data-portal-id="149751775">
+            </div>
+
+            <p class="upload-note">
+              Der Upload ist freiwillig. Sie können Ihre Unterlagen
+              selbstverständlich auch später nachreichen. Bitte laden Sie
+              nur die für die Prüfung erforderlichen Unterlagen hoch.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section class="contact-section">
+        <div class="container">
+
+          <h2>Sie haben noch eine Frage?</h2>
+
+          <p>
+            Bei Rückfragen können Sie uns jederzeit direkt kontaktieren.
+          </p>
+
+          <a
+            class="whatsapp-button"
+            href="https://wa.me/491601238601"
+            target="_blank"
+            rel="noopener noreferrer">
+            Kontakt per WhatsApp
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-inner">
+
+        <div>
+          © 2026 AND Agency. Alle Rechte vorbehalten.
+        </div>
+
+        <div>
+          <a href="https://www.and-agency.de/#impressum">Impressum</a>
+          <a href="https://www.and-agency.de/#datenschutz">Datenschutz</a>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
