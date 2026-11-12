@@ -736,17 +736,28 @@
       }
     }
 
-    @media (max-width: 560px) {
+        @media (max-width: 560px) {
       .container {
-        width: min(100% - 34px, 1160px);
+        width: calc(100% - 40px);
+        max-width: 1160px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
+      /* Navigation */
       .nav {
-        min-height: 68px;
+        min-height: 66px;
+        gap: 10px;
+      }
+
+      .logo {
+        flex: 0 1 auto;
+        min-width: 0;
       }
 
       .logo img {
-        max-width: 130px;
+        width: 112px;
+        max-width: 100%;
       }
 
       .nav-label {
@@ -754,28 +765,90 @@
       }
 
       .nav-right {
+        flex: 0 0 auto;
         gap: 0;
       }
 
       .nav .button {
-        padding: 10px 12px;
+        width: auto;
+        min-height: 40px;
+        padding: 9px 11px;
         font-size: 10px;
+        gap: 6px;
       }
 
+      /* Hero-Bereich */
       .hero {
-        padding: 67px 0 60px;
+        padding: 46px 0 40px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .hero-grid > div:first-child {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+        margin-bottom: 13px;
+      }
+
+      .qualification {
+        display: inline-flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: 7px;
+        padding: 7px 10px;
+        margin-bottom: 17px;
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      .hero h1 {
+        font-size: clamp(31px, 8vw, 36px);
+        line-height: 1.13;
+        letter-spacing: -0.5px;
+        margin-bottom: 17px;
       }
 
       .hero-copy {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 21px;
+      }
+
+      .hero .button {
+        display: flex;
+        width: 100%;
+        max-width: 340px;
+        min-height: 50px;
+        margin: 0;
+        padding: 12px 15px;
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.35;
+        text-align: center;
+      }
+
+      .hero-small {
+        margin-top: 11px;
+        font-size: 11px;
+        line-height: 1.5;
       }
 
       .hero-panel {
-        padding: 25px;
+        padding: 22px;
       }
 
+      /* Weitere Bereiche */
       section {
-        padding: 68px 0;
+        padding: 56px 0;
       }
 
       .trust-grid {
@@ -792,11 +865,11 @@
 
       .audience-card,
       .analysis-card {
-        padding: 25px;
+        padding: 23px;
       }
 
       .consumption-box {
-        padding: 28px 20px;
+        padding: 25px 18px;
       }
 
       .form-card {
