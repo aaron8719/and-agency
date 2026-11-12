@@ -1087,6 +1087,10 @@ window.addEventListener("hs-form-event:on-submission:success", async (event) => 
     return;
   }
 
+  // Meta-Ereignis: erfolgreicher Lead
+  if (typeof window.fbq === "function") {
+    window.fbq("track", "Lead");
+  }
   const bookingUrl = "https://meetings-eu1.hubspot.com/aroesler";
 
   try {
