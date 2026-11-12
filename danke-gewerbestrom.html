@@ -13,41 +13,50 @@
     type="text/javascript">
   </script>
 
-<!-- Meta Pixel - erst nach Marketing-Einwilligung -->
-<script type="text/plain" data-cookieconsent="marketing">
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '30196578849932133');
-fbq('track', 'PageView');
-// Meta-Ereignis: erfolgreicher Termin
-const bookingParams = new URLSearchParams(window.location.search);
+  <!-- Meta Pixel – erst nach Marketing-Einwilligung -->
+  <script type="text/plain" data-cookieconsent="marketing">
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-if (bookingParams.get('booking') === 'success') {
-  fbq('track', 'Schedule');
+    fbq('init', '30196578849932133');
+    fbq('track', 'PageView');
 
-  // Kennzeichnung aus der URL entfernen,
-  // damit ein Neuladen nicht erneut zählt.
-  const cleanUrl = new URL(window.location.href);
-  cleanUrl.searchParams.delete('booking');
+    const bookingParams = new URLSearchParams(window.location.search);
 
-  window.history.replaceState({}, document.title, cleanUrl.pathname + cleanUrl.search + cleanUrl.hash);
-}</script>
+    if (bookingParams.get('booking') === 'success') {
+      fbq('track', 'Schedule');
+
+      const cleanUrl = new URL(window.location.href);
+      cleanUrl.searchParams.delete('booking');
+
+      window.history.replaceState(
+        {},
+        document.title,
+        cleanUrl.pathname + cleanUrl.search + cleanUrl.hash
+      );
+    }
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Vielen Dank für Ihre Buchung | AND Agency</title>
 
-  <meta name="description" content="Vielen Dank für Ihre Terminbuchung bei AND Agency.">
-
+  <meta
+    name="description"
+    content="Vielen Dank für Ihre Terminbuchung bei AND Agency. Sehen Sie sich unser Vorbereitungsvideo an und laden Sie Ihre Stromabrechnung sicher hoch.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -66,6 +75,10 @@ if (bookingParams.get('booking') === 'success') {
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--beige);
@@ -78,12 +91,14 @@ if (bookingParams.get('booking') === 'success') {
       margin: 0 auto;
     }
 
-    /* HEADER UND HERO */
+    /* =========================
+       HERO / BUCHUNGSBESTÄTIGUNG
+    ========================= */
 
     .top-section {
       background: var(--dark);
       color: #fff;
-      padding-bottom: 68px;
+      padding-bottom: 28px;
       position: relative;
       overflow: hidden;
     }
@@ -101,14 +116,14 @@ if (bookingParams.get('booking') === 'success') {
     }
 
     .header {
-      padding: 25px 0 15px;
+      padding: 18px 0 8px;
       position: relative;
       z-index: 1;
     }
 
     .logo {
       display: block;
-      width: 230px;
+      width: 215px;
       max-width: 75%;
       height: auto;
       object-fit: contain;
@@ -116,14 +131,14 @@ if (bookingParams.get('booking') === 'success') {
 
     .hero {
       text-align: center;
-      padding: 48px 0 0;
+      padding: 22px 0 0;
       position: relative;
       z-index: 1;
     }
 
     .success-icon {
-      width: 62px;
-      height: 62px;
+      width: 60px;
+      height: 60px;
       border: 1px solid rgba(226, 201, 143, 0.65);
       background: rgba(199, 164, 91, 0.12);
       color: var(--gold-light);
@@ -132,7 +147,7 @@ if (bookingParams.get('booking') === 'success') {
       align-items: center;
       justify-content: center;
       font-size: 29px;
-      margin: 0 auto 23px;
+      margin: 0 auto 16px;
     }
 
     .eyebrow {
@@ -141,19 +156,20 @@ if (bookingParams.get('booking') === 'success') {
       letter-spacing: 2.5px;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 57px);
+      font-size: clamp(36px, 6vw, 53px);
       line-height: 1.16;
       color: #fff;
-      margin-bottom: 19px;
+      margin-bottom: 14px;
     }
 
     h1 span {
@@ -164,20 +180,108 @@ if (bookingParams.get('booking') === 'success') {
       max-width: 660px;
       margin: 0 auto;
       color: #d0cdc5;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .hero-bottom-line {
       width: 54px;
       height: 2px;
       background: var(--gold);
-      margin: 30px auto 0;
+      margin: 20px auto 0;
     }
 
-    /* VIDEO */
+    /* =========================
+       DEUTLICHER SCROLL-HINWEIS
+    ========================= */
+
+    .scroll-cue {
+      text-align: center;
+      margin: 20px auto 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .scroll-cue a {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      padding: 4px 15px;
+    }
+
+    .scroll-cue strong {
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .scroll-cue p {
+      color: #d0cdc5;
+      font-size: 14px;
+      margin-top: 3px;
+    }
+
+    .scroll-arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+      color: var(--gold-light);
+      font-size: 31px;
+      line-height: 0.72;
+      animation: arrowBounce 1.5s infinite;
+    }
+
+    .scroll-arrows span:last-child {
+      opacity: 0.65;
+    }
+
+    @keyframes arrowBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    /* =========================
+       VIDEO
+    ========================= */
 
     .video-section {
-      padding: 48px 0 42px;
+      padding: 30px 0 28px;
+      scroll-margin-top: 20px;
+    }
+
+    .video-heading {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .video-heading strong {
+      display: block;
+      color: #98783e;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .video-heading h2 {
+      color: var(--text);
+      font-size: clamp(23px, 4vw, 29px);
+      line-height: 1.25;
+    }
+
+    .video-frame {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .video-placeholder {
@@ -197,17 +301,17 @@ if (bookingParams.get('booking') === 'success') {
     }
 
     .play-icon {
-      width: 58px;
-      height: 58px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       background: var(--gold);
       color: var(--black);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 21px;
       padding-left: 4px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .video-placeholder strong {
@@ -220,39 +324,74 @@ if (bookingParams.get('booking') === 'success') {
       font-size: 13px;
     }
 
-    /* UPLOAD-BEREICH */
+    /* =========================
+       HINWEIS ZUM UPLOAD
+    ========================= */
+
+    .upload-direction {
+      text-align: center;
+      padding: 8px 15px 25px;
+    }
+
+    .upload-direction strong {
+      display: block;
+      color: #98783e;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .upload-direction p {
+      color: #625e55;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+
+    .upload-direction-arrow {
+      display: block;
+      color: #b18d49;
+      font-size: 34px;
+      line-height: 1;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       UPLOAD-BEREICH
+    ========================= */
 
     .upload-section {
-      padding: 0 0 55px;
+      padding: 0 0 48px;
+      scroll-margin-top: 20px;
     }
 
     .upload-card {
       background: var(--cream);
       border: 1px solid #ded6c7;
       border-radius: 14px;
-      padding: 40px;
+      padding: 36px;
       box-shadow: 0 10px 30px rgba(40, 35, 25, 0.07);
       text-align: center;
     }
 
     .upload-card h2 {
       color: var(--text);
-      font-size: clamp(27px, 4vw, 34px);
+      font-size: clamp(26px, 4vw, 34px);
       line-height: 1.25;
-      margin-bottom: 15px;
+      margin-bottom: 13px;
     }
 
     .upload-intro {
       color: #625e55;
       font-size: 15px;
-      margin: 0 auto 28px;
+      margin: 0 auto 26px;
       max-width: 750px;
     }
 
     /* FORTSCHRITTSANZEIGE */
 
     .upload-progress {
-      margin: 0 auto 32px;
+      margin: 0 auto 30px;
       max-width: 620px;
       text-align: center;
     }
@@ -289,7 +428,7 @@ if (bookingParams.get('booking') === 'success') {
       border-radius: inherit;
     }
 
-    /* AUFFORDERUNG UND PFEIL */
+    /* UPLOAD-AUFFORDERUNG */
 
     .upload-callout {
       text-align: center;
@@ -314,9 +453,9 @@ if (bookingParams.get('booking') === 'success') {
     .upload-arrow {
       display: block;
       color: #b18d49;
-      font-size: 42px;
+      font-size: 38px;
       line-height: 1.2;
-      margin-top: 7px;
+      margin-top: 5px;
     }
 
     /* HUBSPOT-EINBETTUNG */
@@ -336,57 +475,65 @@ if (bookingParams.get('booking') === 'success') {
       padding-top: 17px;
       border-top: 1px solid #ded7c9;
     }
-/* UPLOAD-ERFOLGSBESTÄTIGUNG */
 
-.upload-success {
-  text-align: center;
-  padding: 30px 10px;
-  animation: successAppear .6s ease both;
-}
+    /* =========================
+       UPLOAD-ERFOLGSBESTÄTIGUNG
+    ========================= */
 
-.upload-success[hidden] {
-  display: none;
-}
+    .upload-success {
+      text-align: center;
+      padding: 30px 10px;
+      animation: successAppear .6s ease both;
+    }
 
-.success-check {
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  background: #e9dfc9;
-  color: #98783e;
-  display: grid;
-  place-items: center;
-  font-size: 38px;
-  font-weight: 700;
-}
+    .upload-success[hidden] {
+      display: none;
+    }
 
-.upload-success h2 {
-  color: var(--text);
-  font-size: 32px;
-  margin-bottom: 12px;
-}
+    .success-check {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #e9dfc9;
+      color: #98783e;
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      font-weight: 700;
+    }
 
-.upload-success p {
-  color: #625e55;
-  max-width: 550px;
-  margin: 0 auto;
-}
+    .upload-success h2 {
+      color: var(--text);
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-@keyframes successAppear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}    /* KONTAKT */
+    .upload-success p {
+      color: #625e55;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    @keyframes successAppear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       KONTAKT
+    ========================= */
 
     .contact-section {
       text-align: center;
-      padding: 0 20px 60px;
+      padding: 0 20px 55px;
     }
 
     .contact-section h2 {
@@ -416,7 +563,9 @@ if (bookingParams.get('booking') === 'success') {
       background: var(--gold-light);
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--dark);
@@ -439,41 +588,113 @@ if (bookingParams.get('booking') === 'success') {
       margin-left: 16px;
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 600px) {
       .container {
         width: min(100% - 30px, 920px);
       }
 
       .top-section {
-        padding-bottom: 49px;
+        padding-bottom: 23px;
       }
 
       .header {
-        padding: 20px 0 10px;
+        padding: 15px 0 6px;
       }
 
       .logo {
-        width: 205px;
+        width: 195px;
       }
 
       .hero {
-        padding-top: 38px;
+        padding-top: 18px;
+      }
+
+      .success-icon {
+        width: 54px;
+        height: 54px;
+        font-size: 26px;
+        margin-bottom: 13px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 9vw, 43px);
+        margin-bottom: 12px;
       }
 
       .hero-text {
-        font-size: 15px;
+        font-size: 14px;
+      }
+
+      .hero-bottom-line {
+        margin-top: 16px;
+      }
+
+      .scroll-cue {
+        margin-top: 14px;
+      }
+
+      .scroll-cue strong {
+        font-size: 12px;
+      }
+
+      .scroll-cue p {
+        font-size: 13px;
+      }
+
+      .scroll-arrows {
+        font-size: 29px;
       }
 
       .video-section {
-        padding: 32px 0 30px;
+        padding: 24px 0 22px;
+      }
+
+      .video-heading {
+        margin-bottom: 12px;
+      }
+
+      .video-placeholder {
+        border-radius: 10px;
+        padding: 15px;
+      }
+
+      .play-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 19px;
+        margin-bottom: 9px;
+      }
+
+      .video-placeholder strong {
+        font-size: 14px;
+      }
+
+      .video-placeholder small {
+        font-size: 11px;
+      }
+
+      .upload-direction {
+        padding: 5px 15px 20px;
+      }
+
+      .upload-direction p {
+        font-size: 14px;
       }
 
       .upload-section {
-        padding-bottom: 42px;
+        padding-bottom: 38px;
       }
 
       .upload-card {
-        padding: 27px 20px;
+        padding: 25px 18px;
+      }
+
+      .upload-intro {
+        font-size: 14px;
       }
 
       .progress-heading {
@@ -493,10 +714,28 @@ if (bookingParams.get('booking') === 'success') {
         margin: 0 8px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .scroll-arrows {
+        animation: none;
+      }
+
+      .upload-success {
+        animation: none;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- =========================
+       BUCHUNGSBESTÄTIGUNG
+  ========================= -->
 
   <section class="top-section">
 
@@ -514,9 +753,13 @@ if (bookingParams.get('booking') === 'success') {
     <section class="hero">
       <div class="container">
 
-        <div class="success-icon">✓</div>
+        <div class="success-icon" aria-label="Buchung erfolgreich">
+          ✓
+        </div>
 
-        <div class="eyebrow">AND Agency · Gewerbestrom</div>
+        <div class="eyebrow">
+          AND Agency · Gewerbestrom
+        </div>
 
         <h1>
           Vielen Dank für<br>
@@ -534,32 +777,120 @@ if (bookingParams.get('booking') === 'success') {
       </div>
     </section>
 
+    <!-- SCROLL-HINWEIS -->
+
+    <div class="scroll-cue">
+      <a href="#vorbereitungsvideo" aria-label="Zum Vorbereitungsvideo scrollen">
+
+        <strong>
+          Noch zwei kurze Schritte
+        </strong>
+
+        <p>
+          Sehen Sie sich unser kurzes Video an und laden Sie anschließend
+          Ihre Stromrechnung hoch.
+        </p>
+
+        <span class="scroll-arrows" aria-hidden="true">
+          <span>⌄</span>
+          <span>⌄</span>
+        </span>
+
+      </a>
+    </div>
+
   </section>
 
   <main>
 
-    <!-- VIDEO -->
+    <!-- =========================
+         PERSÖNLICHES VORBEREITUNGSVIDEO
+    ========================= -->
 
-    <section class="video-section">
+    <section
+      class="video-section"
+      id="vorbereitungsvideo">
+
       <div class="container">
 
-        <div class="video-placeholder">
-          <div class="play-icon">▶</div>
-          <strong>Ein kurzes Wort zur Vorbereitung</strong>
-          <small>Hier wird später Ihr persönliches Begrüßungsvideo eingebunden.</small>
+        <div class="video-heading">
+
+          <strong>
+            Ihre persönliche Vorbereitung
+          </strong>
+
+          <h2>
+            Ein kurzes Wort vor unserem Gespräch
+          </h2>
+
+        </div>
+
+        <div class="video-frame">
+
+          <!--
+            HIER DAS PERSÖNLICHE BEGRÜSSUNGSVIDEO EINBINDEN.
+
+            Sobald die Video-Adresse vorliegt, kann dieser Platzhalter
+            durch einen passenden Video-Player ersetzt werden.
+
+            Der Videobereich ist bewusst kompakter gestaltet.
+          -->
+
+          <div class="video-placeholder">
+
+            <div class="play-icon">
+              ▶
+            </div>
+
+            <strong>
+              Ihr persönliches Begrüßungsvideo
+            </strong>
+
+            <small>
+              Hier wird das kurze Vorbereitungsvideo eingebunden.
+            </small>
+
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- STROMRECHNUNG -->
+    <!-- HINWEIS AUF DEN STROMRECHNUNGS-UPLOAD -->
 
-    <section class="upload-section">
+    <div class="upload-direction">
+
+      <strong>
+        Jetzt fehlt nur noch Ihre Stromrechnung
+      </strong>
+
+      <p>
+        Scrollen Sie weiter nach unten und laden Sie Ihre Abrechnung
+        sicher hoch.
+      </p>
+
+      <span class="upload-direction-arrow" aria-hidden="true">
+        ↓
+      </span>
+
+    </div>
+
+    <!-- =========================
+         STROMRECHNUNG HOCHLADEN
+    ========================= -->
+
+    <section
+      class="upload-section"
+      id="stromrechnung">
+
       <div class="container">
 
         <div class="upload-card">
 
-          <h2>Ihre Stromrechnung für eine optimale Vorbereitung</h2>
+          <h2>
+            Ihre Stromrechnung für eine optimale Vorbereitung
+          </h2>
 
           <p class="upload-intro">
             Laden Sie gerne Ihre aktuelle Jahresabrechnung als PDF oder
@@ -571,105 +902,179 @@ if (bookingParams.get('booking') === 'success') {
 
           <!-- FORTSCHRITTSANZEIGE -->
 
-          <div class="upload-progress"
-               aria-label="Vorbereitung zu 90 Prozent abgeschlossen">
+          <div
+            class="upload-progress"
+            aria-label="Vorbereitung zu 90 Prozent abgeschlossen">
 
             <div class="progress-heading">
               <span>Ihre Vorbereitung</span>
               <span class="progress-percent">90 % geschafft</span>
             </div>
 
-            <div class="progress-track"
-                 role="progressbar"
-                 aria-valuenow="90"
-                 aria-valuemin="0"
-                 aria-valuemax="100">
+            <div
+              class="progress-track"
+              role="progressbar"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100">
 
               <div class="progress-fill"></div>
 
             </div>
+
           </div>
 
           <!-- UPLOAD-AUFFORDERUNG -->
 
           <div class="upload-callout">
-            <strong>Noch ein Schritt</strong>
-            <p>Hier können Sie Ihre Stromrechnung direkt hochladen.</p>
-            <span class="upload-arrow" aria-hidden="true">↓</span>
+
+            <strong>
+              Noch ein Schritt
+            </strong>
+
+            <p>
+              Hier können Sie Ihre Stromrechnung direkt hochladen.
+            </p>
+
+            <span class="upload-arrow" aria-hidden="true">
+              ↓
+            </span>
+
           </div>
 
-          <!-- HUBSPOT-UPLOAD-FORMULAR -->
+          <!-- =========================
+               HUBSPOT-UPLOAD-FORMULAR
+          ========================= -->
 
-<script>
-(() => {
-  const uploadFormId = "3116ee77-9794-48ef-9eb5-9d2d461d272d";
-  const storageKey = "andAgencyGewerbestromEmail";
+          <script>
+            (() => {
 
-  // E-Mail-Adresse aus der Terminbuchung übernehmen
-  window.addEventListener("hs-form-event:on-ready", (event) => {
-    if (event.detail?.formId !== uploadFormId) return;
+              const uploadFormId =
+                "3116ee77-9794-48ef-9eb5-9d2d461d272d";
 
-    const email = sessionStorage.getItem(storageKey);
-    if (!email) return;
+              const storageKey =
+                "andAgencyGewerbestromEmail";
 
-    try {
-      const form = HubSpotFormsV4.getFormFromEvent(event);
-      form.setFieldValue("0-1/email", email);
-    } catch (error) {
-      console.error("E-Mail konnte nicht übertragen werden:", error);
-    }
-  });
+              // E-Mail-Adresse aus der Terminbuchung übernehmen
 
-  // Gemeinsame Elemente ausblenden
-  function hideUploadElements() {
-    const selectors = [
-      ".upload-card > h2",
-      ".upload-intro",
-      ".upload-progress",
-      ".upload-callout",
-      ".hs-form-frame",
-      ".upload-note",
-      "#later-upload-option"
-    ];
+              window.addEventListener(
+                "hs-form-event:on-ready",
+                (event) => {
 
-    selectors.forEach((selector) => {
-      const element = document.querySelector(selector);
-      if (element) element.hidden = true;
-    });
-  }
+                  if (event.detail?.formId !== uploadFormId) {
+                    return;
+                  }
 
-  // Kunde möchte Unterlagen später nachreichen
-document.addEventListener("click", (event) => {
-  if (!event.target.closest("#later-upload-button")) return;
+                  const email =
+                    sessionStorage.getItem(storageKey);
 
-  hideUploadElements();
+                  if (!email) {
+                    return;
+                  }
 
-  const confirmation = document.getElementById(
-    "later-upload-confirmation"
-  );
+                  try {
 
-  if (confirmation) confirmation.hidden = false;
-});
+                    const form =
+                      HubSpotFormsV4.getFormFromEvent(event);
 
-  // Erfolgreicher PDF-Upload
-  window.addEventListener("hs-form-event:on-submission:success", (event) => {
-    if (event.detail?.formId !== uploadFormId) return;
+                    form.setFieldValue("0-1/email", email);
 
-    sessionStorage.removeItem(storageKey);
-    hideUploadElements();
+                  } catch (error) {
 
-    const laterConfirmation = document.getElementById(
-      "later-upload-confirmation"
-    );
+                    console.error(
+                      "E-Mail konnte nicht übertragen werden:",
+                      error
+                    );
 
-    if (laterConfirmation) laterConfirmation.hidden = true;
+                  }
 
-    const successMessage = document.getElementById("upload-success");
+                }
+              );
 
-    if (successMessage) successMessage.hidden = false;
-  });
-})();
-</script>
+              // Gemeinsame Elemente nach Upload oder späterem Nachreichen ausblenden
+
+              function hideUploadElements() {
+
+                const selectors = [
+                  ".upload-card > h2",
+                  ".upload-intro",
+                  ".upload-progress",
+                  ".upload-callout",
+                  ".hs-form-frame",
+                  ".upload-note",
+                  "#later-upload-option"
+                ];
+
+                selectors.forEach((selector) => {
+
+                  const element =
+                    document.querySelector(selector);
+
+                  if (element) {
+                    element.hidden = true;
+                  }
+
+                });
+
+              }
+
+              // Kunde möchte Unterlagen später nachreichen
+
+              document.addEventListener("click", (event) => {
+
+                if (!event.target.closest("#later-upload-button")) {
+                  return;
+                }
+
+                hideUploadElements();
+
+                const confirmation =
+                  document.getElementById(
+                    "later-upload-confirmation"
+                  );
+
+                if (confirmation) {
+                  confirmation.hidden = false;
+                }
+
+              });
+
+              // Erfolgreicher Upload
+
+              window.addEventListener(
+                "hs-form-event:on-submission:success",
+                (event) => {
+
+                  if (event.detail?.formId !== uploadFormId) {
+                    return;
+                  }
+
+                  sessionStorage.removeItem(storageKey);
+
+                  hideUploadElements();
+
+                  const laterConfirmation =
+                    document.getElementById(
+                      "later-upload-confirmation"
+                    );
+
+                  if (laterConfirmation) {
+                    laterConfirmation.hidden = true;
+                  }
+
+                  const successMessage =
+                    document.getElementById("upload-success");
+
+                  if (successMessage) {
+                    successMessage.hidden = false;
+                  }
+
+                }
+              );
+
+            })();
+          </script>
+
           <script
             src="https://js-eu1.hsforms.net/forms/embed/149751775.js"
             defer>
@@ -687,8 +1092,11 @@ document.addEventListener("click", (event) => {
             selbstverständlich auch später nachreichen. Bitte laden Sie
             nur die für die Prüfung erforderlichen Unterlagen hoch.
           </p>
-                    <!-- UNTERLAGEN SPÄTER NACHREICHEN -->
+
+          <!-- UNTERLAGEN SPÄTER NACHREICHEN -->
+
           <div id="later-upload-option">
+
             <p style="margin-top: 25px; font-size: 13px; color: #625e55;">
               Sie haben Ihre Stromrechnung gerade nicht zur Hand?
             </p>
@@ -697,60 +1105,98 @@ document.addEventListener("click", (event) => {
               type="button"
               id="later-upload-button"
               style="margin-top: 8px; background: transparent; border: 1px solid #b9ad98; color: #625e55; padding: 10px 18px; border-radius: 5px; cursor: pointer;">
+
               Unterlagen später nachreichen
+
             </button>
+
           </div>
 
-          <div id="later-upload-confirmation" hidden style="padding: 30px 10px;">
-            <div class="success-check">✓</div>
-            <h2>Alles erledigt!</h2>
+          <!-- BESTÄTIGUNG BEI SPÄTEREM NACHREICHEN -->
+
+          <div
+            id="later-upload-confirmation"
+            hidden
+            style="padding: 30px 10px;">
+
+            <div class="success-check">
+              ✓
+            </div>
+
+            <h2>
+              Alles erledigt!
+            </h2>
+
             <p>
               Ihr Termin ist bereits erfolgreich gebucht. Vielen Dank!
               Kein Problem, wenn Sie Ihre Stromrechnung gerade nicht
               zur Hand haben.
             </p>
-                        <p style="margin-top: 15px;">
+
+            <p style="margin-top: 15px;">
               Bitte senden Sie Ihre Unterlagen später per E-Mail an:
             </p>
 
             <p style="margin-top: 8px;">
-              <a href="mailto:info@and-agency.de"
-                 style="color: #98783e; font-weight: 700;">
+              <a
+                href="mailto:info@and-agency.de"
+                style="color: #98783e; font-weight: 700;">
+
                 info@and-agency.de
+
               </a>
             </p>
 
             <p style="margin-top: 15px;">
-  Wir freuen uns auf unser gemeinsames Gespräch!
-  Sie können diese Seite jetzt schließen.
-</p>
+              Wir freuen uns auf unser gemeinsames Gespräch!
+              Sie können diese Seite jetzt schließen.
+            </p>
+
           </div>
 
           <!-- ERFOLGSMELDUNG NACH DEM UPLOAD -->
-          <div class="upload-success" id="upload-success" hidden>
-            <div class="success-check">✓</div>
-            <h2>Alles erledigt!</h2>
+
+          <div
+            class="upload-success"
+            id="upload-success"
+            hidden>
+
+            <div class="success-check">
+              ✓
+            </div>
+
+            <h2>
+              Alles erledigt!
+            </h2>
+
             <p>
-  Ihre Stromabrechnung wurde erfolgreich übermittelt.
-  Vielen Dank! Wir prüfen Ihre Unterlagen und bereiten uns
-  auf unser gemeinsames Gespräch vor.
-  <br><br>
-  Wir freuen uns auf unser gemeinsames Gespräch!
-  Sie können diese Seite jetzt schließen.
-</p>
+              Ihre Stromabrechnung wurde erfolgreich übermittelt.
+              Vielen Dank! Wir prüfen Ihre Unterlagen und bereiten uns
+              auf unser gemeinsames Gespräch vor.
+              <br><br>
+              Wir freuen uns auf unser gemeinsames Gespräch!
+              Sie können diese Seite jetzt schließen.
+            </p>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-       <!-- KONTAKT -->
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <section class="contact-section">
+
       <div class="container">
 
-        <h2>Sie haben noch eine Frage?</h2>
+        <h2>
+          Sie haben noch eine Frage?
+        </h2>
 
         <p>
           Bei Rückfragen können Sie uns jederzeit direkt kontaktieren.
@@ -761,17 +1207,23 @@ document.addEventListener("click", (event) => {
           href="https://wa.me/491601238601"
           target="_blank"
           rel="noopener noreferrer">
+
           Kontakt per WhatsApp
+
         </a>
 
       </div>
+
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
+
     <div class="container footer-inner">
 
       <div>
@@ -779,11 +1231,27 @@ document.addEventListener("click", (event) => {
       </div>
 
       <div>
-        <a href="https://www.and-agency.de/#impressum">Impressum</a>
-        <a href="https://www.and-agency.de/datenschutz.html">Datenschutz</a>
-        <a onclick="window.Cookiebot.show()" href="#">Privacy settings</a>      </div>
+
+        <a href="https://www.and-agency.de/#impressum">
+          Impressum
+        </a>
+
+        <a href="https://www.and-agency.de/datenschutz.html">
+          Datenschutz
+        </a>
+
+        <a
+          onclick="window.Cookiebot.show()"
+          href="#">
+
+          Privacy settings
+
+        </a>
+
+      </div>
 
     </div>
+
   </footer>
 
 </body>
