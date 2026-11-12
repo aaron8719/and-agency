@@ -1097,8 +1097,17 @@ window.addEventListener("hs-form-event:on-submission:success", async (event) => 
   jahrlicher_stromverbrauch_kwh: getValue("jahrlicher_stromverbrauch_kwh"),
   zip: getValue("zip")
 };
-
-    const params = new URLSearchParams();
+// E-Mail für den späteren Rechnungs-Upload speichern
+if (entries.email.trim()) {
+  try {
+    sessionStorage.setItem(
+      "andAgencyGewerbestromEmail",
+      entries.email.trim()
+    );
+  } catch (error) {
+    console.warn("E-Mail konnte nicht gespeichert werden:", error);
+  }
+}    const params = new URLSearchParams();
 
     Object.entries(entries).forEach(([key, value]) => {
       if (value.trim()) params.set(key, value.trim());
