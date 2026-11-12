@@ -567,52 +567,70 @@
   const uploadFormId = "3116ee77-9794-48ef-9eb5-9d2d461d272d";
   const storageKey = "andAgencyGewerbestromEmail";
 
+  // E-Mail-Adresse aus der Terminbuchung übernehmen
   window.addEventListener("hs-form-event:on-ready", (event) => {
     if (event.detail?.formId !== uploadFormId) return;
 
     const email = sessionStorage.getItem(storageKey);
-    if (!email) {
-      console.warn("Keine gespeicherte Kunden-E-Mail gefunden.");
-      return;
-    }
+    if (!email) return;
 
     try {
       const form = HubSpotFormsV4.getFormFromEvent(event);
       form.setFieldValue("0-1/email", email);
-      console.log("E-Mail wurde übertragen.");
     } catch (error) {
       console.error("E-Mail konnte nicht übertragen werden:", error);
     }
   });
 
-    window.addEventListener("hs-form-event:on-submission:success", (event) => {
-    if (event.detail?.formId !== uploadFormId) return;
-
-    sessionStorage.removeItem(storageKey);
-
-    const uploadCard = document.querySelector(".upload-card");
-
-    if (!uploadCard) return;
-
-    const elementsToHide = [
+  // Gemeinsame Elemente ausblenden
+  function hideUploadElements() {
+    const selectors = [
       ".upload-card > h2",
       ".upload-intro",
       ".upload-progress",
       ".upload-callout",
       ".hs-form-frame",
-      ".upload-note"
+      ".upload-note",
+      "#later-upload-option"
     ];
 
-    elementsToHide.forEach((selector) => {
-      const element = uploadCard.querySelector(selector);
+    selectors.forEach((selector) => {
+      const element = document.querySelector(selector);
       if (element) element.hidden = true;
     });
+  }
+
+  // Kunde möchte Unterlagen später nachreichen
+  const laterButton = document.getElementById("later-upload-button");
+
+  if (laterButton) {
+    laterButton.addEventListener("click", () => {
+      hideUploadElements();
+
+      const confirmation = document.getElementById(
+        "later-upload-confirmation"
+      );
+
+      if (confirmation) confirmation.hidden = false;
+    });
+  }
+
+  // Erfolgreicher PDF-Upload
+  window.addEventListener("hs-form-event:on-submission:success", (event) => {
+    if (event.detail?.formId !== uploadFormId) return;
+
+    sessionStorage.removeItem(storageKey);
+    hideUploadElements();
+
+    const laterConfirmation = document.getElementById(
+      "later-upload-confirmation"
+    );
+
+    if (laterConfirmation) laterConfirmation.hidden = true;
 
     const successMessage = document.getElementById("upload-success");
 
-    if (successMessage) {
-      successMessage.hidden = false;
-    }
+    if (successMessage) successMessage.hidden = false;
   });
 })();
 </script>
