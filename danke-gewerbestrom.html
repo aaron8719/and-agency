@@ -585,9 +585,34 @@
     }
   });
 
-  window.addEventListener("hs-form-event:on-submission:success", (event) => {
+    window.addEventListener("hs-form-event:on-submission:success", (event) => {
     if (event.detail?.formId !== uploadFormId) return;
+
     sessionStorage.removeItem(storageKey);
+
+    const uploadCard = document.querySelector(".upload-card");
+
+    if (!uploadCard) return;
+
+    const elementsToHide = [
+      ".upload-card > h2",
+      ".upload-intro",
+      ".upload-progress",
+      ".upload-callout",
+      ".hs-form-frame",
+      ".upload-note"
+    ];
+
+    elementsToHide.forEach((selector) => {
+      const element = uploadCard.querySelector(selector);
+      if (element) element.hidden = true;
+    });
+
+    const successMessage = document.getElementById("upload-success");
+
+    if (successMessage) {
+      successMessage.hidden = false;
+    }
   });
 })();
 </script>
@@ -608,8 +633,16 @@
             selbstverständlich auch später nachreichen. Bitte laden Sie
             nur die für die Prüfung erforderlichen Unterlagen hoch.
           </p>
-
-        </div>
+          <!-- ERFOLGSMELDUNG NACH DEM UPLOAD -->
+          <div class="upload-success" id="upload-success" hidden>
+            <div class="success-check">✓</div>
+            <h2>Alles erledigt!</h2>
+            <p>
+              Ihre Stromabrechnung wurde erfolgreich übermittelt.
+              Vielen Dank! Wir prüfen Ihre Unterlagen und bereiten uns
+              auf unser gemeinsames Gespräch vor.
+            </p>
+          </div>        </div>
 
       </div>
     </section>
