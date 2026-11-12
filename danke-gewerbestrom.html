@@ -601,19 +601,17 @@
   }
 
   // Kunde möchte Unterlagen später nachreichen
-  const laterButton = document.getElementById("later-upload-button");
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("#later-upload-button")) return;
 
-  if (laterButton) {
-    laterButton.addEventListener("click", () => {
-      hideUploadElements();
+  hideUploadElements();
 
-      const confirmation = document.getElementById(
-        "later-upload-confirmation"
-      );
+  const confirmation = document.getElementById(
+    "later-upload-confirmation"
+  );
 
-      if (confirmation) confirmation.hidden = false;
-    });
-  }
+  if (confirmation) confirmation.hidden = false;
+});
 
   // Erfolgreicher PDF-Upload
   window.addEventListener("hs-form-event:on-submission:success", (event) => {
