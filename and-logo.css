@@ -8,10 +8,10 @@
 
 .and-logo {
   display: inline-block;
-  width: 340px;
+  width: 370px;
   box-sizing: border-box;
-  padding: 20px 22px 17px;
-  background: #0B0B0B;
+  padding: 12px 18px 10px;
+  background: transparent;
   color: #fff;
   font-family: Arial, sans-serif;
   transform-origin: top left;
@@ -28,7 +28,7 @@
   align-items: center;
   flex: 0 0 auto;
   font-family: Georgia, serif;
-  font-size: 86px;
+  font-size: 80px;
   line-height: .9;
   letter-spacing: -9px;
 }
@@ -40,7 +40,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 1.5px rgba(198,164,92,.12));
 }
 
 .and-logo__d-wrap {
@@ -57,12 +56,7 @@
 }
 
 .and-logo__d-cut {
-  position: absolute;
-  width: 13px;
-  height: 8px;
-  right: -1px;
-  bottom: 1px;
-  background: #0B0B0B;
+  display: none;
 }
 
 .and-logo__n {
@@ -117,99 +111,120 @@
 }
 
 .and-logo__claim {
-  margin-top: 12px;
+  margin-top: 7px;
   text-align: center;
   font-family: Georgia, serif;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1.8px;
   color: #fff;
   white-space: nowrap;
 }
 
+/* NAVIGATION */
+
 .and-logo-slot--nav {
   width: 204px;
-  height: 76px;
+  height: 55px;
 }
 
 .and-logo-slot--nav .and-logo {
-  transform: scale(.6);
+  transform: scaleX(.55) scaleY(.48);
 }
+
+/* ÜBER UNS */
 
 .and-logo-slot--about {
   width: 100%;
-  height: 140px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .and-logo-slot--about .and-logo {
-  transform: scale(.72);
+  transform: scaleX(.68) scaleY(.61);
   transform-origin: center center;
 }
 
+/* FOOTER */
+
 .and-logo-slot--footer {
   width: 170px;
-  height: 64px;
+  height: 48px;
   margin-bottom: 1rem;
 }
 
 .and-logo-slot--footer .and-logo {
-  transform: scale(.5);
+  transform: scaleX(.46) scaleY(.42);
 }
 
+/* GEWERBESTROM */
+
 .and-logo-slot--compact {
-  width: 175px;
-  height: 65px;
+  width: 190px;
+  height: 52px;
 }
 
 .and-logo-slot--compact .and-logo {
-  transform: scale(.515);
+  transform: scaleX(.515) scaleY(.45);
 }
+
+/* DANKE-SEITE */
 
 .and-logo-slot--thankyou {
   width: 205px;
-  height: 77px;
+  height: 55px;
   max-width: 100%;
 }
 
 .and-logo-slot--thankyou .and-logo {
-  transform: scale(.6);
+  transform: scaleX(.555) scaleY(.48);
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
   .and-logo-slot--nav {
     width: 128px;
-    height: 49px;
+    height: 38px;
   }
 
   .and-logo-slot--nav .and-logo {
-    transform: scale(.376);
+    transform: scaleX(.346) scaleY(.33);
   }
 
   .and-logo-slot--compact {
-    width: 112px;
-    height: 43px;
+    width: 126px;
+    height: 36px;
   }
 
   .and-logo-slot--compact .and-logo {
-    transform: scale(.33);
+    transform: scaleX(.34) scaleY(.31);
   }
 
   .and-logo-slot--thankyou {
     width: 190px;
-    height: 72px;
+    height: 52px;
   }
 
   .and-logo-slot--thankyou .and-logo {
-    transform: scale(.56);
+    transform: scaleX(.514) scaleY(.45);
   }
 
   .and-logo-slot--about {
-    height: 112px;
+    height: 100px;
   }
 
   .and-logo-slot--about .and-logo {
-    transform: scale(.58);
+    transform: scaleX(.58) scaleY(.52);
+  }
+
+  .and-logo-slot--footer {
+    width: 150px;
+    height: 43px;
+  }
+
+  .and-logo-slot--footer .and-logo {
+    transform: scaleX(.405) scaleY(.38);
   }
 }
