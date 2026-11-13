@@ -8,6 +8,7 @@
 
 .and-logo {
   display: inline-block;
+  position: relative;
   width: 370px;
   box-sizing: border-box;
   padding: 12px 18px 10px;
@@ -111,11 +112,12 @@
 }
 
 .and-logo__claim {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 7px auto 0;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin: 7px 0 0;
   text-align: center;
   font-family: Georgia, serif;
   font-size: 16px;
